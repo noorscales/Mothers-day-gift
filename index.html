@@ -1,0 +1,818 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+<title>Happy Mother's Day 💕</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400;1,700&family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300;1,400&family=Great+Vibes&display=swap" rel="stylesheet">
+<style>
+:root {
+  --blush:#FFB6C1;--rose:#FF6B8A;--hot:#FF1493;--crimson:#DC143C;--deep:#8B0000;
+  --white:#FFFAF9;--cream:#FFF0F3;--soft:#FFE4E8;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{
+  background:linear-gradient(160deg,#FFE4E8 0%,#FFB6C1 25%,#FF6B8A 55%,#DC143C 100%);
+  min-height:100vh;font-family:'Cormorant Garamond',serif;overflow-x:hidden;
+}
+
+/* PETALS */
+.petal{position:fixed;top:-40px;pointer-events:none;z-index:0;animation:fall linear infinite;}
+@keyframes fall{0%{transform:translateY(-40px) rotate(0deg);opacity:.8}100%{transform:translateY(110vh) rotate(720deg);opacity:0}}
+
+/* OVERLAYS */
+.overlay{position:fixed;top:0;left:0;right:0;bottom:0;width:100%;height:100%;
+  background:rgba(90,0,30,.82);
+  z-index:1000;display:flex;align-items:center;justify-content:center;
+  -webkit-overflow-scrolling:touch;padding:20px}
+@keyframes fadeIn{from{opacity:0}to{opacity:1}}
+.overlay.hidden{display:none!important}
+
+.popup{background:linear-gradient(145deg,#FFF0F3,#FFE4E8,#FFCCD5);
+  border-radius:28px;padding:32px 24px 28px;max-width:310px;width:100%;
+  text-align:center;
+  box-shadow:0 24px 64px rgba(220,20,60,.4),0 4px 20px rgba(255,107,138,.3);
+  border:2px solid rgba(255,107,138,.4);
+  animation:popIn .6s cubic-bezier(.175,.885,.32,1.275) both;position:relative;
+  flex-shrink:0}
+@keyframes popIn{from{opacity:0;transform:scale(.45) rotate(-6deg)}to{opacity:1;transform:scale(1) rotate(0deg)}}
+.popup h2{font-family:'Great Vibes',cursive;font-size:2.1rem;color:#DC143C;margin-bottom:10px}
+.popup p{font-size:.9rem;color:#7a2a3a;font-style:italic;line-height:1.7;margin-bottom:18px}
+.btn{background:linear-gradient(135deg,#FF1493,#DC143C);color:#fff;border:none;
+  border-radius:50px;padding:0;width:100%;font-family:'Playfair Display',serif;
+  font-size:1rem;letter-spacing:.5px;cursor:pointer;
+  box-shadow:0 4px 20px rgba(220,20,60,.4);
+  -webkit-tap-highlight-color:rgba(0,0,0,0);touch-action:manipulation;
+  display:block;height:52px;line-height:52px;text-align:center}
+.btn:active{opacity:.8}
+
+/* HERO */
+.hero{position:relative;z-index:1;min-height:100vh;display:flex;
+  flex-direction:column;align-items:center;justify-content:center;
+  padding:40px 16px;text-align:center}
+.card{background:rgba(255,255,255,.93);border-radius:32px;
+  padding:44px 26px 40px;max-width:430px;width:100%;
+  box-shadow:0 8px 40px rgba(220,20,60,.2),0 2px 12px rgba(255,107,138,.2),inset 0 1px 0 rgba(255,255,255,.9);
+  border:1.5px solid rgba(255,107,138,.3);position:relative;overflow:hidden}
+.card::before{content:'';position:absolute;top:0;left:0;right:0;height:5px;
+  background:linear-gradient(90deg,#FF1493,#DC143C,#FF6B8A,#FF1493);
+  background-size:200%;animation:shimmer 3s linear infinite}
+@keyframes shimmer{0%{background-position:0%}100%{background-position:200%}}
+
+.pre{font-family:'Great Vibes',cursive;font-size:1.4rem;color:#FF6B8A;margin-bottom:4px;animation:fadeUp 1s ease both}
+h1.big{font-family:'Great Vibes',cursive;font-size:clamp(2.8rem,9vw,4rem);color:#DC143C;
+  line-height:1.15;margin-bottom:8px;text-shadow:0 2px 16px rgba(220,20,60,.15);
+  animation:fadeUp 1s .2s ease both;opacity:0}
+@keyframes fadeUp{from{opacity:0;transform:translateY(22px)}to{opacity:1;transform:translateY(0)}}
+
+.heart-div{font-size:1.6rem;margin:10px 0;animation:pulse 1.5s ease-in-out infinite,fadeUp 1s .4s ease both;opacity:0}
+@keyframes pulse{0%,100%{transform:scale(1)}50%{transform:scale(1.2)}}
+
+.msg{font-size:1.02rem;color:#7a2a3a;line-height:1.85;font-style:italic;font-weight:300;
+  margin-bottom:18px;animation:fadeUp 1s .6s ease both;opacity:0}
+
+.rose3d{font-size:4.2rem;display:inline-block;animation:float3d 3s ease-in-out infinite;
+  filter:drop-shadow(0 8px 16px rgba(220,20,60,.35));margin:10px 0}
+@keyframes float3d{
+  0%,100%{transform:translateY(0) rotateY(0deg) scale(1)}
+  33%{transform:translateY(-10px) rotateY(18deg) scale(1.06)}
+  66%{transform:translateY(-5px) rotateY(-12deg) scale(1.02)}}
+
+.flowers{display:flex;justify-content:center;gap:10px;margin:14px 0;flex-wrap:wrap}
+.fl{font-size:2.2rem;display:inline-block;animation:floatF 2.5s ease-in-out infinite;
+  filter:drop-shadow(0 4px 10px rgba(220,20,60,.3))}
+.fl:nth-child(2){animation-delay:.4s}.fl:nth-child(3){animation-delay:.8s}
+.fl:nth-child(4){animation-delay:1.2s}.fl:nth-child(5){animation-delay:1.6s}
+@keyframes floatF{0%,100%{transform:translateY(0) rotateZ(0deg)}50%{transform:translateY(-9px) rotateZ(6deg)}}
+
+.hearts{display:flex;justify-content:center;gap:12px;margin:14px 0;flex-wrap:wrap}
+.ht{display:inline-block;animation:hb 1.3s ease-in-out infinite;filter:drop-shadow(0 3px 8px rgba(220,20,60,.4))}
+.ht:nth-child(1){font-size:1.8rem}.ht:nth-child(2){font-size:2.5rem;animation-delay:.2s}
+.ht:nth-child(3){font-size:1.4rem;animation-delay:.4s}.ht:nth-child(4){font-size:2rem;animation-delay:.6s}
+.ht:nth-child(5){font-size:1.6rem;animation-delay:.8s}
+@keyframes hb{0%,100%,70%{transform:scale(1)}14%{transform:scale(1.2)}42%{transform:scale(1.12)}}
+
+/* GIFTS SECTION */
+.gifts{position:relative;z-index:1;padding:0 16px 36px;display:flex;flex-direction:column;align-items:center}
+.gifts-title{font-family:'Great Vibes',cursive;font-size:2.4rem;color:#fff;
+  text-align:center;margin-bottom:24px;text-shadow:0 3px 12px rgba(139,0,0,.3)}
+
+.gift-env{background:rgba(255,255,255,.93);border-radius:28px;
+  max-width:430px;width:100%;margin-bottom:18px;
+  box-shadow:0 8px 36px rgba(220,20,60,.2);border:1.5px solid rgba(255,107,138,.3);
+  overflow:hidden;cursor:pointer;-webkit-tap-highlight-color:rgba(0,0,0,0);touch-action:manipulation}
+.gift-env:active{opacity:.92}
+
+.gift-header{padding:18px 22px;display:flex;align-items:center;gap:14px;
+  background:linear-gradient(135deg,rgba(255,182,193,.3),rgba(255,107,138,.12))}
+.g-icon{width:54px;height:54px;border-radius:50%;
+  background:linear-gradient(135deg,#FF6B8A,#DC143C);
+  display:flex;align-items:center;justify-content:center;font-size:1.75rem;
+  flex-shrink:0;box-shadow:0 4px 16px rgba(220,20,60,.35);animation:floatF 2.8s ease-in-out infinite}
+.gift-header h3{font-family:'Playfair Display',serif;font-size:1.1rem;color:#DC143C;margin-bottom:2px}
+.gift-header p{font-size:.8rem;color:#9a4a5a;font-style:italic}
+.arrow{margin-left:auto;font-size:1.5rem;transition:transform .3s;color:#FF6B8A;flex-shrink:0}
+.arrow.open{transform:rotate(90deg)}
+
+.gift-body{max-height:0;overflow:hidden;transition:max-height .55s cubic-bezier(.4,0,.2,1);padding:0 22px}
+.gift-body.open{max-height:2400px}
+.gbi{padding:18px 0 24px}
+
+/* LETTER */
+.letter{background:linear-gradient(170deg,#FFFAF9,#FFF0F3);
+  border-radius:16px;padding:26px 20px;border:1px solid rgba(255,107,138,.22);
+  box-shadow:inset 0 4px 20px rgba(220,20,60,.07);position:relative}
+.letter::before{content:'';position:absolute;top:8px;left:8px;right:8px;bottom:8px;
+  border:1px dashed rgba(255,107,138,.22);border-radius:10px;pointer-events:none}
+.letter p{color:#5a1a2a;font-size:.97rem;line-height:2;font-style:italic;margin-bottom:12px}
+.letter .sig{font-family:'Great Vibes',cursive;font-size:2rem;color:#DC143C;text-align:right;display:block}
+.letter .deco{text-align:center;font-size:1.7rem;margin-bottom:14px;display:block}
+
+/* SONGS */
+.song-card{background:linear-gradient(135deg,#FFF0F3,#FFE4E8);
+  border-radius:14px;padding:16px;margin-bottom:12px;
+  border:1px solid rgba(255,107,138,.28);display:flex;align-items:center;gap:12px;
+  text-decoration:none;transition:transform .18s,box-shadow .18s;
+  box-shadow:0 3px 14px rgba(220,20,60,.1)}
+.song-card:active{opacity:.85}
+.sn{font-size:1.9rem;flex-shrink:0;display:inline-block;animation:floatF 2.5s ease-in-out infinite}
+.song-card:nth-child(2) .sn{animation-delay:.3s}
+.song-card:nth-child(3) .sn{animation-delay:.6s}
+.song-card:nth-child(4) .sn{animation-delay:.9s}
+.si .ar{font-family:'Playfair Display',serif;font-size:.85rem;color:#DC143C;font-weight:700;margin-bottom:1px}
+.si .tt{font-size:.94rem;color:#5a1a2a;font-style:italic}
+.play{margin-left:auto;background:linear-gradient(135deg,#FF1493,#DC143C);color:#fff;
+  border:none;border-radius:50%;width:38px;height:38px;font-size:.95rem;cursor:pointer;
+  flex-shrink:0;box-shadow:0 3px 10px rgba(220,20,60,.4);
+  display:flex;align-items:center;justify-content:center}
+.snote{font-size:.8rem;color:#9a4a5a;font-style:italic;text-align:center;margin-top:4px}
+
+
+
+/* LUXURY */
+.luxury{position:relative;z-index:1;padding:0 16px 36px;display:flex;flex-direction:column;align-items:center;gap:18px}
+.sec-label{font-family:'Great Vibes',cursive;font-size:2.2rem;color:#fff;
+  text-align:center;margin-bottom:4px;text-shadow:0 3px 12px rgba(139,0,0,.3)}
+.lux-card{background:rgba(255,255,255,.93);border-radius:24px;padding:26px 22px;
+  max-width:430px;width:100%;text-align:center;
+  box-shadow:0 6px 32px rgba(220,20,60,.15);border:1px solid rgba(255,107,138,.25)}
+.lux-card h3{font-family:'Playfair Display',serif;color:#DC143C;font-size:1.08rem;margin-bottom:6px}
+.lux-card p{color:#9a4a5a;font-size:.9rem;line-height:1.65;font-style:italic}
+.svg-float{display:block;margin:0 auto 12px;animation:floatItem 3.5s ease-in-out infinite;
+  filter:drop-shadow(0 8px 20px rgba(220,20,60,.25))}
+.svg-float.d2{animation-delay:.5s}
+@keyframes floatItem{0%,100%{transform:translateY(0)}50%{transform:translateY(-11px)}}
+
+/* CLOSING */
+.closing{position:relative;z-index:1;padding:0 16px 60px;text-align:center}
+.close-card{background:rgba(255,255,255,.93);border-radius:28px;padding:34px 22px;
+  max-width:430px;margin:0 auto;
+  box-shadow:0 6px 32px rgba(220,20,60,.18);border:1px solid rgba(255,107,138,.25)}
+.close-card h2{font-family:'Great Vibes',cursive;font-size:2.8rem;color:#DC143C;margin-bottom:12px}
+.close-card p{font-style:italic;color:#7a2a3a;line-height:1.85;font-size:.98rem;margin-bottom:18px}
+.btn-row{display:flex;flex-wrap:wrap;gap:10px;justify-content:center}
+.bsm{background:linear-gradient(135deg,#FF1493,#DC143C);color:#fff;border:none;
+  border-radius:50px;padding:13px 22px;font-family:'Playfair Display',serif;
+  font-size:.88rem;cursor:pointer;box-shadow:0 4px 16px rgba(220,20,60,.35);-webkit-tap-highlight-color:rgba(0,0,0,0);touch-action:manipulation}
+.bsm:active{opacity:.8}
+.bsm.b2{background:linear-gradient(135deg,#FF6B8A,#FF1493)}
+
+/* CONFETTI */
+.cp{position:fixed;pointer-events:none;z-index:9999;animation:cF 2s linear forwards}
+@keyframes cF{0%{opacity:1;transform:translateY(0) rotate(0)}100%{opacity:0;transform:translateY(220px) rotate(720deg)}}
+
+footer{position:relative;z-index:1;text-align:center;padding:14px;
+  color:rgba(255,255,255,.78);font-size:.8rem;font-style:italic}
+</style>
+</head>
+<body>
+<div id="petals"></div>
+
+<!-- KISS POPUP -->
+<div class="overlay" id="kissPop">
+  <div class="popup">
+    <div style="font-size:5rem;display:block;margin-bottom:12px;animation:hb 1.3s ease-in-out infinite;filter:drop-shadow(0 6px 14px rgba(220,20,60,.4))">💋</div>
+    <h2>A Big Kiss, Mum!</h2>
+    <p>This little world was made with every drop of love I have for you. You deserve this and so much more. Happy Mother's Day!</p>
+    <button class="btn" onclick="closeKiss()">💕 Open My Gifts for You</button>
+  </div>
+</div>
+
+<!-- WELCOME POPUP -->
+<div class="overlay hidden" id="welcomePop">
+  <div class="popup">
+    <div style="font-size:4rem;margin-bottom:12px;animation:floatF 2.5s ease-in-out infinite;display:block">🎁</div>
+    <h2>Happy Mother's Day!</h2>
+    <p>You are the most wonderful mum in the entire world. Being your daughter is the greatest gift I could ever have. I love you endlessly.</p>
+    <button class="btn" onclick="closeWelcome()">🌸 Enter My World of Love</button>
+  </div>
+</div>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="card">
+    <div class="flowers">
+      <span class="fl">🌸</span><span class="fl">🌺</span>
+      <span class="fl">💐</span><span class="fl">🌹</span><span class="fl">🌸</span>
+    </div>
+    <p class="pre">To the most beautiful soul —</p>
+    <h1 class="big">Happy Mother's Day</h1>
+    <div class="heart-div">💗 💝 💗</div>
+    <div class="rose3d">🌹</div>
+    <p class="msg">I am so endlessly grateful to be your daughter. You are my whole world — my safe place, my best friend, my greatest inspiration. Every day I thank my lucky stars it's <em>you</em> who is my mum.</p>
+    <div class="hearts">
+      <span class="ht">🤍</span><span class="ht">❤️</span>
+      <span class="ht">🩷</span><span class="ht">💕</span><span class="ht">🩷</span>
+    </div>
+  </div>
+</section>
+
+<!-- GIFTS -->
+<section class="gifts">
+  <p class="gifts-title">Gifts Just for You 💝</p>
+
+  <!-- GIFT 1: LETTER -->
+  <div class="gift-env" onclick="toggleGift('g1')">
+    <div class="gift-header">
+      <div class="g-icon">💌</div>
+      <div>
+        <h3>A Letter From My Heart</h3>
+        <p>Words I've always wanted to say</p>
+      </div>
+      <span class="arrow" id="a1">›</span>
+    </div>
+    <div class="gift-body" id="g1">
+      <div class="gbi">
+        <div class="letter">
+          <span class="deco">🌹 🌸 🌹</span>
+          <p>My dearest, most beautiful Mum,</p>
+          <p>There are not enough words in any language to tell you how much you mean to me — but I will spend my whole life trying.</p>
+          <p>Thank you for being the kind of mum who makes every room feel safer, every problem feel smaller, and every ordinary day feel like something worth treasuring.</p>
+          <p>Thank you for the late nights you stayed up worrying about me. For every meal made with love. For every time you believed in me even when I didn't believe in myself. For every hug that fixed everything.</p>
+          <p>I am who I am because of you. Your strength, your grace, your warmth — it lives in me. And I carry you with me everywhere I go.</p>
+          <p>I am so incredibly proud and lucky to be your daughter. Being yours is the greatest honour of my life.</p>
+          <p>On this day and every day — <em>I love you more than you will ever know.</em></p>
+          <span class="sig">Forever your daughter 💕</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- GIFT 2: SONGS -->
+  <div class="gift-env" onclick="toggleGift('g2')">
+    <div class="gift-header">
+      <div class="g-icon" style="animation-delay:.3s">🎵</div>
+      <div>
+        <h3>Songs That Made Me Think of You</h3>
+        <p>4 beautiful dedications, just for you</p>
+      </div>
+      <span class="arrow" id="a2">›</span>
+    </div>
+    <div class="gift-body" id="g2">
+      <div class="gbi">
+        <a class="song-card" href="https://www.youtube.com/watch?v=0f3lTfSTwiQ" target="_blank" rel="noopener" onclick="event.stopPropagation()">
+          <span class="sn">🎶</span>
+          <div class="si"><div class="ar">Arjan Dhillon</div><div class="tt">Maava'n</div></div>
+          <div class="play">▶</div>
+        </a>
+        <a class="song-card" href="https://www.youtube.com/watch?v=vA6z9KaWXjY" target="_blank" rel="noopener" onclick="event.stopPropagation()">
+          <span class="sn">🎵</span>
+          <div class="si"><div class="ar">Harbhajan Mann</div><div class="tt">Maava'n</div></div>
+          <div class="play">▶</div>
+        </a>
+        <a class="song-card" href="https://www.youtube.com/watch?v=526rsmk_r3M" target="_blank" rel="noopener" onclick="event.stopPropagation()">
+          <span class="sn">🎼</span>
+          <div class="si"><div class="ar">Kuldeep Manak</div><div class="tt">Maa Hundi Ae Maa</div></div>
+          <div class="play">▶</div>
+        </a>
+        <a class="song-card" href="https://www.youtube.com/watch?v=GjrSptMs39w" target="_blank" rel="noopener" onclick="event.stopPropagation()">
+          <span class="sn">💗</span>
+          <div class="si"><div class="ar">Asees Kaur, IP Singh & Snipr</div><div class="tt">Maaye Ni</div></div>
+          <div class="play">▶</div>
+        </a>
+        <p class="snote">Tap any song to listen 🎧 Each one was chosen with you in mind</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- GIFT 3: BOUQUET -->
+  <div class="gift-env" onclick="toggleGift('g3')">
+    <div class="gift-header">
+      <div class="g-icon" style="animation-delay:.6s">&#x1F338;</div>
+      <div>
+        <h3>A Luxury Bouquet for You</h3>
+        <p>Wrapped in Dior, made with love</p>
+      </div>
+      <span class="arrow" id="a3">&#x203A;</span>
+    </div>
+    <div class="gift-body" id="g3">
+      <div class="gbi">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 380 540" width="100%" style="display:block;max-width:380px;margin:0 auto">
+          <defs>
+            <!-- Dior paper pattern: cream with tiny grey toile dots -->
+            <pattern id="dior" patternUnits="userSpaceOnUse" width="18" height="18">
+              <rect width="18" height="18" fill="#f8f0e8"/>
+              <circle cx="3" cy="3" r="0.7" fill="#c8b89a" opacity=".6"/>
+              <circle cx="12" cy="9" r="0.5" fill="#c8b89a" opacity=".5"/>
+              <circle cx="6" cy="15" r="0.6" fill="#c8b89a" opacity=".5"/>
+              <!-- tiny fleur-de-lis hint -->
+              <path d="M9 4.5 Q9.5 3 9 2 Q8.5 3 9 4.5z" fill="#b0987a" opacity=".35"/>
+              <path d="M9 4.5 Q10 4 10.5 3.2 Q9.5 3.8 9 4.5z" fill="#b0987a" opacity=".25"/>
+              <path d="M9 4.5 Q8 4 7.5 3.2 Q8.5 3.8 9 4.5z" fill="#b0987a" opacity=".25"/>
+            </pattern>
+            <!-- Dior tissue inner lining: soft blush -->
+            <pattern id="tissue" patternUnits="userSpaceOnUse" width="12" height="12">
+              <rect width="12" height="12" fill="#fce8f0"/>
+              <line x1="0" y1="6" x2="12" y2="6" stroke="#f4c8d8" stroke-width=".4" opacity=".5"/>
+              <line x1="6" y1="0" x2="6" y2="12" stroke="#f4c8d8" stroke-width=".4" opacity=".5"/>
+            </pattern>
+            <!-- Ribbon gradient -->
+            <linearGradient id="ribG" x1="0" y1="0" x2="1" y2="0">
+              <stop offset="0%" stop-color="#b03060"/>
+              <stop offset="40%" stop-color="#e8507a"/>
+              <stop offset="60%" stop-color="#f090a8"/>
+              <stop offset="100%" stop-color="#b03060"/>
+            </linearGradient>
+            <linearGradient id="ribV" x1="0" y1="0" x2="0" y2="1">
+              <stop offset="0%" stop-color="#d04070"/>
+              <stop offset="50%" stop-color="#f090a8"/>
+              <stop offset="100%" stop-color="#c03060"/>
+            </linearGradient>
+            <!-- Stem green -->
+            <linearGradient id="stemG" x1="0" y1="0" x2="1" y2="0">
+              <stop offset="0%" stop-color="#1a5c1a"/>
+              <stop offset="50%" stop-color="#2e8b2e"/>
+              <stop offset="100%" stop-color="#1a5c1a"/>
+            </linearGradient>
+            <!-- Rose red shading -->
+            <radialGradient id="roseR" cx="40%" cy="35%" r="60%">
+              <stop offset="0%" stop-color="#ff8098"/>
+              <stop offset="60%" stop-color="#dc143c"/>
+              <stop offset="100%" stop-color="#8b0000"/>
+            </radialGradient>
+            <radialGradient id="roseDeep" cx="40%" cy="35%" r="60%">
+              <stop offset="0%" stop-color="#e83060"/>
+              <stop offset="60%" stop-color="#b01040"/>
+              <stop offset="100%" stop-color="#6b0020"/>
+            </radialGradient>
+            <radialGradient id="rosePink" cx="40%" cy="35%" r="60%">
+              <stop offset="0%" stop-color="#ffb8d0"/>
+              <stop offset="60%" stop-color="#f06090"/>
+              <stop offset="100%" stop-color="#c03060"/>
+            </radialGradient>
+            <radialGradient id="roseWhite" cx="40%" cy="30%" r="65%">
+              <stop offset="0%" stop-color="#fff8fc"/>
+              <stop offset="50%" stop-color="#f8e0ec"/>
+              <stop offset="100%" stop-color="#e8c8d8"/>
+            </radialGradient>
+            <!-- Peony -->
+            <radialGradient id="peonyG" cx="50%" cy="40%" r="60%">
+              <stop offset="0%" stop-color="#ffe0f0"/>
+              <stop offset="55%" stop-color="#f090c0"/>
+              <stop offset="100%" stop-color="#c05090"/>
+            </radialGradient>
+            <!-- Eucalyptus leaf -->
+            <linearGradient id="eucG" x1="0" y1="0" x2="1" y2="1">
+              <stop offset="0%" stop-color="#7ab87a"/>
+              <stop offset="100%" stop-color="#3a6e3a"/>
+            </linearGradient>
+            <!-- Wrap paper shading -->
+            <linearGradient id="wrapShade" x1="0" y1="0" x2="1" y2="1">
+              <stop offset="0%" stop-color="#ffffff" stop-opacity=".25"/>
+              <stop offset="100%" stop-color="#000000" stop-opacity=".12"/>
+            </linearGradient>
+          </defs>
+
+          <!-- ═══ STEMS (drawn first, behind everything) ═══ -->
+          <!-- main stems cluster -->
+          <g opacity=".95">
+            <line x1="190" y1="390" x2="145" y2="510" stroke="url(#stemG)" stroke-width="3.5" stroke-linecap="round"/>
+            <line x1="190" y1="390" x2="165" y2="515" stroke="url(#stemG)" stroke-width="3" stroke-linecap="round"/>
+            <line x1="190" y1="390" x2="190" y2="518" stroke="url(#stemG)" stroke-width="3.5" stroke-linecap="round"/>
+            <line x1="190" y1="390" x2="215" y2="515" stroke="url(#stemG)" stroke-width="3" stroke-linecap="round"/>
+            <line x1="190" y1="390" x2="235" y2="510" stroke="url(#stemG)" stroke-width="3.5" stroke-linecap="round"/>
+            <line x1="190" y1="390" x2="120" y2="505" stroke="url(#stemG)" stroke-width="2.5" stroke-linecap="round"/>
+            <line x1="190" y1="390" x2="255" y2="505" stroke="url(#stemG)" stroke-width="2.5" stroke-linecap="round"/>
+            <!-- small branching leaves on stems -->
+            <ellipse cx="155" cy="462" rx="10" ry="5" fill="#3a8a3a" opacity=".8" transform="rotate(-40 155 462)"/>
+            <ellipse cx="225" cy="458" rx="10" ry="5" fill="#3a8a3a" opacity=".8" transform="rotate(40 225 458)"/>
+            <ellipse cx="176" cy="480" rx="8" ry="4" fill="#2e7a2e" opacity=".7" transform="rotate(-25 176 480)"/>
+            <ellipse cx="205" cy="475" rx="8" ry="4" fill="#2e7a2e" opacity=".7" transform="rotate(25 205 475)"/>
+          </g>
+
+          <!-- ═══ DIOR WRAP PAPER (cone shape) ═══ -->
+          <!-- Back layer of wrap -->
+          <path d="M95 390 Q90 370 100 340 L155 290 L225 290 L280 340 Q290 370 285 390 Z"
+                fill="url(#dior)" stroke="#c8a878" stroke-width="1"/>
+          <!-- Paper fold shadow on back -->
+          <path d="M95 390 Q90 370 100 340 L155 290 L190 340 L190 390 Z"
+                fill="rgba(0,0,0,0.06)"/>
+          <!-- Inner tissue lining visible at top of cone -->
+          <path d="M120 350 Q130 330 155 310 L190 310 L225 310 L250 330 Q260 345 265 360 L235 345 Q210 330 190 332 Q170 330 145 345 Z"
+                fill="url(#tissue)" opacity=".9"/>
+          <!-- Main wrap front -->
+          <path d="M108 395 Q102 373 112 343 L160 295 L220 295 L268 343 Q278 373 272 395 L240 380 Q220 368 190 366 Q160 368 140 380 Z"
+                fill="url(#dior)" stroke="#c8a878" stroke-width="1.2"/>
+          <!-- Wrap highlight/sheen -->
+          <path d="M108 395 Q102 373 112 343 L160 295 L190 320 L190 395 L140 380 Z"
+                fill="url(#wrapShade)" opacity=".4"/>
+          <!-- Wrap right fold line -->
+          <path d="M190 320 Q220 310 268 343 Q278 373 272 395 L240 380 Q215 370 190 395 Z"
+                fill="rgba(255,255,255,.12)"/>
+          <!-- DIOR logo strip on wrap -->
+          <rect x="148" y="348" width="84" height="18" rx="3" fill="#1a1a1a" opacity=".85"/>
+          <text x="190" y="361" text-anchor="middle" fill="#d4af7a" font-family="Georgia,serif" font-size="10" font-weight="bold" letter-spacing="4">DIOR</text>
+          <!-- wrap crease lines -->
+          <path d="M140 380 Q155 355 160 295" stroke="#b89060" stroke-width=".8" fill="none" opacity=".4"/>
+          <path d="M240 380 Q225 355 220 295" stroke="#b89060" stroke-width=".8" fill="none" opacity=".4"/>
+
+          <!-- ═══ RIBBON BAND across wrap ═══ -->
+          <path d="M110 375 Q190 360 270 375" stroke="url(#ribG)" stroke-width="10" fill="none" stroke-linecap="round"/>
+          <path d="M110 375 Q190 360 270 375" stroke="rgba(255,255,255,.25)" stroke-width="2" fill="none" stroke-linecap="round"/>
+
+          <!-- ═══ LARGE RIBBON BOW (center of wrap) ═══ -->
+          <!-- Left bow loop -->
+          <path d="M190 358 Q155 330 135 315 Q125 305 138 302 Q152 300 168 318 Q178 332 190 358 Z"
+                fill="url(#ribG)" stroke="#c03060" stroke-width=".8"/>
+          <path d="M190 358 Q162 335 148 318 Q140 308 145 306 Q168 322 190 358 Z"
+                fill="rgba(255,255,255,.18)"/>
+          <!-- Right bow loop -->
+          <path d="M190 358 Q225 330 245 315 Q255 305 242 302 Q228 300 212 318 Q202 332 190 358 Z"
+                fill="url(#ribG)" stroke="#c03060" stroke-width=".8"/>
+          <path d="M190 358 Q218 335 232 318 Q240 308 235 306 Q212 322 190 358 Z"
+                fill="rgba(255,255,255,.18)"/>
+          <!-- Left tail -->
+          <path d="M190 362 Q175 370 158 385 Q148 394 152 398 Q160 400 172 390 Q182 378 190 362 Z"
+                fill="url(#ribV)" stroke="#c03060" stroke-width=".8"/>
+          <!-- Right tail -->
+          <path d="M190 362 Q205 370 222 385 Q232 394 228 398 Q220 400 208 390 Q198 378 190 362 Z"
+                fill="url(#ribV)" stroke="#c03060" stroke-width=".8"/>
+          <!-- Bow centre knot -->
+          <ellipse cx="190" cy="360" rx="10" ry="8" fill="#dc143c"/>
+          <ellipse cx="188" cy="358" rx="4" ry="3" fill="rgba(255,255,255,.3)"/>
+
+          <!-- ═══ EUCALYPTUS & GREENERY (behind flowers) ═══ -->
+          <!-- Large eucalyptus sprays -->
+          <g opacity=".9">
+            <!-- Far left spray -->
+            <path d="M120 295 Q100 265 88 240" stroke="#4a8a4a" stroke-width="2" fill="none"/>
+            <ellipse cx="97" cy="256" rx="13" ry="6" fill="url(#eucG)" opacity=".85" transform="rotate(-55 97 256)"/>
+            <ellipse cx="88" cy="242" rx="12" ry="5.5" fill="url(#eucG)" opacity=".8" transform="rotate(-50 88 242)"/>
+            <ellipse cx="107" cy="270" rx="11" ry="5" fill="#5a9a5a" opacity=".8" transform="rotate(-60 107 270)"/>
+            <!-- Left mid spray -->
+            <path d="M145 270 Q128 245 115 218" stroke="#4a8a4a" stroke-width="1.8" fill="none"/>
+            <ellipse cx="121" cy="230" rx="12" ry="5" fill="url(#eucG)" opacity=".85" transform="rotate(-45 121 230)"/>
+            <ellipse cx="115" cy="218" rx="11" ry="5" fill="#6aaa5a" opacity=".8" transform="rotate(-40 115 218)"/>
+            <ellipse cx="132" cy="248" rx="10" ry="4.5" fill="url(#eucG)" opacity=".75" transform="rotate(-50 132 248)"/>
+            <!-- Right spray -->
+            <path d="M235 270 Q255 242 268 216" stroke="#4a8a4a" stroke-width="1.8" fill="none"/>
+            <ellipse cx="262" cy="228" rx="12" ry="5" fill="url(#eucG)" opacity=".85" transform="rotate(42 262 228)"/>
+            <ellipse cx="268" cy="216" rx="11" ry="5" fill="#6aaa5a" opacity=".8" transform="rotate(38 268 216)"/>
+            <ellipse cx="250" cy="248" rx="10" ry="4.5" fill="url(#eucG)" opacity=".75" transform="rotate(50 250 248)"/>
+            <!-- Far right spray -->
+            <path d="M258 292 Q278 263 292 238" stroke="#4a8a4a" stroke-width="2" fill="none"/>
+            <ellipse cx="284" cy="252" rx="13" ry="6" fill="url(#eucG)" opacity=".85" transform="rotate(53 284 252)"/>
+            <ellipse cx="292" cy="238" rx="12" ry="5.5" fill="url(#eucG)" opacity=".8" transform="rotate(48 292 238)"/>
+            <ellipse cx="272" cy="268" rx="11" ry="5" fill="#5a9a5a" opacity=".8" transform="rotate(58 272 268)"/>
+            <!-- Filler leaves low -->
+            <ellipse cx="110" cy="310" rx="16" ry="6" fill="#4a8a4a" opacity=".7" transform="rotate(-30 110 310)"/>
+            <ellipse cx="270" cy="308" rx="16" ry="6" fill="#4a8a4a" opacity=".7" transform="rotate(30 270 308)"/>
+            <ellipse cx="78" cy="298" rx="18" ry="7" fill="#3a7a3a" opacity=".65" transform="rotate(-20 78 298)"/>
+            <ellipse cx="302" cy="295" rx="18" ry="7" fill="#3a7a3a" opacity=".65" transform="rotate(20 302 295)"/>
+          </g>
+
+          <!-- Small white gypsophila clusters (baby's breath) -->
+          <g fill="#fff8fb" opacity=".9">
+            <circle cx="102" cy="248" r="3.5"/><circle cx="95" cy="238" r="2.8"/>
+            <circle cx="110" cy="232" r="3"/><circle cx="118" cy="225" r="2.5"/>
+            <circle cx="88" cy="228" r="2.5"/><circle cx="99" cy="220" r="3"/>
+            <circle cx="272" cy="244" r="3.5"/><circle cx="282" cy="232" r="2.8"/>
+            <circle cx="264" cy="232" r="3"/><circle cx="258" cy="222" r="2.5"/>
+            <circle cx="290" cy="225" r="2.5"/><circle cx="278" cy="220" r="3"/>
+            <circle cx="128" cy="210" r="2.5"/><circle cx="136" cy="202" r="3"/>
+            <circle cx="250" cy="210" r="2.5"/><circle cx="242" cy="202" r="3"/>
+          </g>
+
+          <!-- ═══ FLOWER LAYER 1 — Back row (smaller, lighter) ═══ -->
+
+          <!-- Back left tulip -->
+          <g transform="translate(118,230) rotate(-18)">
+            <rect x="-4" y="0" width="8" height="28" rx="4" fill="#2e7a2e"/>
+            <path d="M0,-2 Q-12,-20 -10,-38 Q-5,-50 0,-42 Q5,-50 10,-38 Q12,-20 0,-2 Z" fill="#e87898" stroke="#c05070" stroke-width=".8"/>
+            <path d="M0,-2 Q-5,-18 -4,-35 Q0,-45 0,-42 Q4,-35 3,-18 Q2,-8 0,-2Z" fill="rgba(255,255,255,.2)"/>
+          </g>
+
+          <!-- Back right tulip -->
+          <g transform="translate(262,228) rotate(16)">
+            <rect x="-4" y="0" width="8" height="28" rx="4" fill="#2e7a2e"/>
+            <path d="M0,-2 Q-12,-20 -10,-38 Q-5,-50 0,-42 Q5,-50 10,-38 Q12,-20 0,-2 Z" fill="#f090b0" stroke="#c05070" stroke-width=".8"/>
+            <path d="M0,-2 Q-5,-18 -4,-35 Q0,-45 0,-42 Q4,-35 3,-18 Q2,-8 0,-2Z" fill="rgba(255,255,255,.2)"/>
+          </g>
+
+          <!-- Back small rose bud left -->
+          <g transform="translate(140,250) rotate(-8)">
+            <rect x="-2.5" y="0" width="5" height="20" rx="2.5" fill="#1a6a1a"/>
+            <path d="M0,-2 Q-8,-12 -6,-20 Q-2,-26 0,-22 Q2,-26 6,-20 Q8,-12 0,-2Z" fill="#cc2040" stroke="#9a1030" stroke-width=".8"/>
+            <path d="M0,-2 Q-3,-10 -2,-18 Q0,-23 0,-22 Q2,-18 2,-10 Q1,-5 0,-2Z" fill="rgba(255,180,190,.4)"/>
+          </g>
+
+          <!-- Back small rose bud right -->
+          <g transform="translate(242,248) rotate(7)">
+            <rect x="-2.5" y="0" width="5" height="20" rx="2.5" fill="#1a6a1a"/>
+            <path d="M0,-2 Q-8,-12 -6,-20 Q-2,-26 0,-22 Q2,-26 6,-20 Q8,-12 0,-2Z" fill="#e03868" stroke="#a01030" stroke-width=".8"/>
+            <path d="M0,-2 Q-3,-10 -2,-18 Q0,-23 0,-22 Q2,-18 2,-10 Q1,-5 0,-2Z" fill="rgba(255,180,190,.4)"/>
+          </g>
+
+          <!-- ═══ FLOWER LAYER 2 — Mid roses and peonies ═══ -->
+
+          <!-- Mid-left full rose -->
+          <g transform="translate(148,248)">
+            <path d="M0,0 Q-14,-8 -18,-22 Q-12,-36 0,-30 Q12,-36 18,-22 Q14,-8 0,0Z" fill="url(#roseR)"/>
+            <path d="M0,0 Q-10,-10 -10,-22 Q-5,-32 0,-28 Q5,-32 10,-22 Q10,-10 0,0Z" fill="url(#roseDeep)"/>
+            <path d="M0,0 Q-5,-8 -4,-18 Q-1,-24 0,-22 Q4,-18 3,-8 Q1,-3 0,0Z" fill="rgba(255,160,170,.35)"/>
+            <path d="M-18,-22 Q-22,-14 -20,-5 Q-14,2 0,0 Q14,2 20,-5 Q22,-14 18,-22" stroke="#8b0020" stroke-width=".8" fill="none" opacity=".6"/>
+            <!-- outer petals -->
+            <path d="M0,0 Q-20,-2 -24,-14 Q-20,-28 -14,-26 Q-8,-24 0,0Z" fill="#dc143c" opacity=".7"/>
+            <path d="M0,0 Q20,-2 24,-14 Q20,-28 14,-26 Q8,-24 0,0Z" fill="#dc143c" opacity=".7"/>
+            <path d="M0,0 Q-18,8 -14,18 Q-6,24 0,20 Q6,24 14,18 Q18,8 0,0Z" fill="#cc1030" opacity=".55"/>
+          </g>
+
+          <!-- Mid-right full rose (deep red) -->
+          <g transform="translate(232,245)">
+            <path d="M0,0 Q-14,-8 -18,-22 Q-12,-36 0,-30 Q12,-36 18,-22 Q14,-8 0,0Z" fill="url(#roseDeep)"/>
+            <path d="M0,0 Q-10,-10 -10,-22 Q-5,-32 0,-28 Q5,-32 10,-22 Q10,-10 0,0Z" fill="#8b0020"/>
+            <path d="M0,0 Q-5,-8 -4,-18 Q-1,-24 0,-22 Q4,-18 3,-8 Q1,-3 0,0Z" fill="rgba(255,140,150,.3)"/>
+            <path d="M0,0 Q-20,-2 -24,-14 Q-20,-28 -14,-26 Q-8,-24 0,0Z" fill="#b01030" opacity=".7"/>
+            <path d="M0,0 Q20,-2 24,-14 Q20,-28 14,-26 Q8,-24 0,0Z" fill="#b01030" opacity=".7"/>
+            <path d="M0,0 Q-18,8 -14,18 Q-6,24 0,20 Q6,24 14,18 Q18,8 0,0Z" fill="#9a0828" opacity=".6"/>
+          </g>
+
+          <!-- Left peony (large fluffy) -->
+          <g transform="translate(128,215)">
+            <path d="M0,5 Q-22,8 -28,-5 Q-26,-20 -14,-22 Q-6,-24 0,-18 Q6,-24 14,-22 Q26,-20 28,-5 Q22,8 0,5Z" fill="url(#peonyG)"/>
+            <path d="M0,5 Q-15,4 -18,-6 Q-14,-18 -6,-18 Q0,-16 0,-12 Q0,-16 6,-18 Q14,-18 18,-6 Q15,4 0,5Z" fill="#f8c0e0"/>
+            <path d="M0,0 Q-8,-4 -8,-12 Q-4,-18 0,-16 Q4,-18 8,-12 Q8,-4 0,0Z" fill="#fce8f4"/>
+            <!-- peony centre stamens -->
+            <circle cx="0" cy="-2" r="5" fill="#f8e0f0"/>
+            <circle cx="-3" cy="-3" r="1.5" fill="#e8a0c0"/><circle cx="2" cy="-5" r="1.5" fill="#e8a0c0"/>
+            <circle cx="3" cy="-1" r="1.2" fill="#e8a0c0"/><circle cx="-1" cy="-7" r="1.2" fill="#dda0c0"/>
+            <!-- outer petals -->
+            <path d="M0,5 Q-28,10 -30,0 Q-28,-10 -22,-10 Q-14,-10 0,5Z" fill="#e090c0" opacity=".6"/>
+            <path d="M0,5 Q28,10 30,0 Q28,-10 22,-10 Q14,-10 0,5Z" fill="#e090c0" opacity=".6"/>
+            <path d="M0,5 Q-20,18 -12,24 Q-4,28 0,22 Q4,28 12,24 Q20,18 0,5Z" fill="#d878b8" opacity=".5"/>
+          </g>
+
+          <!-- Right peony -->
+          <g transform="translate(252,213)">
+            <path d="M0,5 Q-22,8 -28,-5 Q-26,-20 -14,-22 Q-6,-24 0,-18 Q6,-24 14,-22 Q26,-20 28,-5 Q22,8 0,5Z" fill="url(#peonyG)"/>
+            <path d="M0,5 Q-15,4 -18,-6 Q-14,-18 -6,-18 Q0,-16 0,-12 Q0,-16 6,-18 Q14,-18 18,-6 Q15,4 0,5Z" fill="#f8c0e0"/>
+            <path d="M0,0 Q-8,-4 -8,-12 Q-4,-18 0,-16 Q4,-18 8,-12 Q8,-4 0,0Z" fill="#fce8f4"/>
+            <circle cx="0" cy="-2" r="5" fill="#f8e0f0"/>
+            <circle cx="-3" cy="-3" r="1.5" fill="#e8a0c0"/><circle cx="2" cy="-5" r="1.5" fill="#e8a0c0"/>
+            <circle cx="3" cy="-1" r="1.2" fill="#e8a0c0"/><circle cx="-1" cy="-7" r="1.2" fill="#dda0c0"/>
+            <path d="M0,5 Q-28,10 -30,0 Q-28,-10 -22,-10 Q-14,-10 0,5Z" fill="#e090c0" opacity=".6"/>
+            <path d="M0,5 Q28,10 30,0 Q28,-10 22,-10 Q14,-10 0,5Z" fill="#e090c0" opacity=".6"/>
+            <path d="M0,5 Q-20,18 -12,24 Q-4,28 0,22 Q4,28 12,24 Q20,18 0,5Z" fill="#d878b8" opacity=".5"/>
+          </g>
+
+          <!-- ═══ FLOWER LAYER 3 — Front main flowers ═══ -->
+
+          <!-- LARGE CENTER ROSE (pride of the bouquet) -->
+          <g transform="translate(190,200)">
+            <!-- outermost petals -->
+            <path d="M0,8 Q-32,10 -36,-4 Q-34,-22 -20,-24 Q-10,-26 0,-16 Q10,-26 20,-24 Q34,-22 36,-4 Q32,10 0,8Z" fill="#c81030" opacity=".75"/>
+            <path d="M0,8 Q-24,20 -18,30 Q-10,36 0,30 Q10,36 18,30 Q24,20 0,8Z" fill="#b00828" opacity=".65"/>
+            <path d="M-36,-4 Q-40,8 -34,16 Q-24,22 0,8 Z" fill="#c01028" opacity=".55"/>
+            <path d="M36,-4 Q40,8 34,16 Q24,22 0,8 Z" fill="#c01028" opacity=".55"/>
+            <!-- mid petals -->
+            <path d="M0,4 Q-22,6 -26,-6 Q-22,-20 -10,-20 Q-4,-20 0,-12 Q4,-20 10,-20 Q22,-20 26,-6 Q22,6 0,4Z" fill="url(#roseR)"/>
+            <!-- inner layer -->
+            <path d="M0,4 Q-16,4 -18,-6 Q-14,-18 -6,-18 Q0,-14 0,-10 Q0,-14 6,-18 Q14,-18 18,-6 Q16,4 0,4Z" fill="#e83058"/>
+            <!-- spiral centre -->
+            <path d="M0,2 Q-10,0 -10,-8 Q-6,-16 0,-14 Q6,-16 10,-8 Q10,0 0,2Z" fill="#dc143c"/>
+            <path d="M0,0 Q-4,-4 -2,-10 Q0,-14 0,-12 Q2,-10 2,-4 Q1,-1 0,0Z" fill="rgba(255,200,200,.5)"/>
+            <circle cx="0" cy="-4" r="5" fill="#c01030"/>
+            <path d="M-4,-2 Q-2,-8 0,-7 Q2,-8 4,-2 Q2,0 0,0 Q-2,0 -4,-2Z" fill="#e04060"/>
+          </g>
+
+          <!-- Front left white rose -->
+          <g transform="translate(155,235)">
+            <path d="M0,6 Q-24,8 -26,-4 Q-24,-18 -12,-20 Q-6,-22 0,-14 Q6,-22 12,-20 Q24,-18 26,-4 Q24,8 0,6Z" fill="url(#roseWhite)"/>
+            <path d="M0,6 Q-18,14 -14,22 Q-8,26 0,22 Q8,26 14,22 Q18,14 0,6Z" fill="#e8c8d8" opacity=".7"/>
+            <path d="M0,4 Q-16,4 -16,-6 Q-12,-18 -4,-18 Q0,-14 0,-10 Q0,-14 4,-18 Q12,-18 16,-6 Q16,4 0,4Z" fill="#f8eef4"/>
+            <path d="M0,2 Q-8,0 -8,-8 Q-4,-16 0,-14 Q4,-16 8,-8 Q8,0 0,2Z" fill="#fdf6f9"/>
+            <circle cx="0" cy="-4" r="4.5" fill="#f0e0ec"/>
+            <path d="M-3,-2 Q-1,-8 0,-7 Q1,-8 3,-2 Q1,0 0,0 Q-1,0 -3,-2Z" fill="rgba(230,190,210,.7)"/>
+          </g>
+
+          <!-- Front right pink rose -->
+          <g transform="translate(225,232)">
+            <path d="M0,6 Q-24,8 -26,-4 Q-24,-18 -12,-20 Q-6,-22 0,-14 Q6,-22 12,-20 Q24,-18 26,-4 Q24,8 0,6Z" fill="url(#rosePink)"/>
+            <path d="M0,6 Q-18,14 -14,22 Q-8,26 0,22 Q8,26 14,22 Q18,14 0,6Z" fill="#e890b0" opacity=".7"/>
+            <path d="M0,4 Q-16,4 -16,-6 Q-12,-18 -4,-18 Q0,-14 0,-10 Q0,-14 4,-18 Q12,-18 16,-6 Q16,4 0,4Z" fill="#f8c0d8"/>
+            <path d="M0,2 Q-8,0 -8,-8 Q-4,-16 0,-14 Q4,-16 8,-8 Q8,0 0,2Z" fill="#fce0ec"/>
+            <circle cx="0" cy="-4" r="4.5" fill="#f4b0cc"/>
+            <path d="M-3,-2 Q-1,-8 0,-7 Q1,-8 3,-2 Q1,0 0,0 Q-1,0 -3,-2Z" fill="rgba(255,170,200,.6)"/>
+          </g>
+
+          <!-- Far left front ranunculus -->
+          <g transform="translate(108,270)">
+            <path d="M0,4 Q-18,6 -20,-4 Q-18,-16 -8,-18 Q-2,-20 0,-12 Q2,-20 8,-18 Q18,-16 20,-4 Q18,6 0,4Z" fill="#ff8090" opacity=".8"/>
+            <path d="M0,4 Q-12,10 -10,18 Q-4,22 0,18 Q4,22 10,18 Q12,10 0,4Z" fill="#f06070" opacity=".7"/>
+            <path d="M0,2 Q-12,2 -12,-6 Q-8,-14 -2,-14 Q0,-10 0,-8 Q0,-10 2,-14 Q8,-14 12,-6 Q12,2 0,2Z" fill="#ffa0a8"/>
+            <path d="M0,0 Q-6,-2 -6,-8 Q-2,-14 0,-12 Q2,-14 6,-8 Q6,-2 0,0Z" fill="#ffb8bc"/>
+            <circle cx="0" cy="-3" r="4" fill="#ffc8cc"/>
+            <circle cx="-1" cy="-3" r="1.5" fill="#e07080"/><circle cx="1.5" cy="-4.5" r="1.2" fill="#e07080"/>
+          </g>
+
+          <!-- Far right front ranunculus -->
+          <g transform="translate(272,268)">
+            <path d="M0,4 Q-18,6 -20,-4 Q-18,-16 -8,-18 Q-2,-20 0,-12 Q2,-20 8,-18 Q18,-16 20,-4 Q18,6 0,4Z" fill="#ff90a8" opacity=".8"/>
+            <path d="M0,4 Q-12,10 -10,18 Q-4,22 0,18 Q4,22 10,18 Q12,10 0,4Z" fill="#f070a0" opacity=".7"/>
+            <path d="M0,2 Q-12,2 -12,-6 Q-8,-14 -2,-14 Q0,-10 0,-8 Q0,-10 2,-14 Q8,-14 12,-6 Q12,2 0,2Z" fill="#ffb0c8"/>
+            <path d="M0,0 Q-6,-2 -6,-8 Q-2,-14 0,-12 Q2,-14 6,-8 Q6,-2 0,0Z" fill="#ffc8d8"/>
+            <circle cx="0" cy="-3" r="4" fill="#ffd8e4"/>
+            <circle cx="-1" cy="-3" r="1.5" fill="#e080a0"/><circle cx="1.5" cy="-4.5" r="1.2" fill="#e080a0"/>
+          </g>
+
+          <!-- Small accent roses front corners -->
+          <g transform="translate(85,290)">
+            <path d="M0,4 Q-14,5 -15,-4 Q-13,-14 -5,-15 Q0,-10 0,-8 Q0,-10 5,-15 Q13,-14 15,-4 Q14,5 0,4Z" fill="#dc143c" opacity=".85"/>
+            <path d="M0,2 Q-8,2 -8,-5 Q-4,-12 0,-10 Q4,-12 8,-5 Q8,2 0,2Z" fill="#e84060"/>
+            <circle cx="0" cy="-2" r="3.5" fill="#c01028"/>
+          </g>
+          <g transform="translate(295,288)">
+            <path d="M0,4 Q-14,5 -15,-4 Q-13,-14 -5,-15 Q0,-10 0,-8 Q0,-10 5,-15 Q13,-14 15,-4 Q14,5 0,4Z" fill="#e83060" opacity=".85"/>
+            <path d="M0,2 Q-8,2 -8,-5 Q-4,-12 0,-10 Q4,-12 8,-5 Q8,2 0,2Z" fill="#f06080"/>
+            <circle cx="0" cy="-2" r="3.5" fill="#c82848"/>
+          </g>
+
+          <!-- ═══ GARLAND TRAILING VINES ═══ -->
+          <g opacity=".8">
+            <!-- Left trailing vine with small blossoms -->
+            <path d="M82,292 Q62,310 55,330 Q50,350 58,365" stroke="#3a7a3a" stroke-width="1.5" fill="none"/>
+            <ellipse cx="68" cy="316" rx="7" ry="3.5" fill="#4a8a4a" transform="rotate(-35 68 316)"/>
+            <ellipse cx="56" cy="344" rx="7" ry="3" fill="#5a9a5a" transform="rotate(-20 56 344)"/>
+            <circle cx="74" cy="308" r="3.5" fill="#ffb8c8" opacity=".9"/>
+            <circle cx="60" cy="332" r="3" fill="#ffc8d8" opacity=".85"/>
+            <circle cx="56" cy="358" r="3" fill="#ff90a8" opacity=".8"/>
+            <!-- Right trailing vine -->
+            <path d="M298,290 Q318,308 325,328 Q330,348 322,363" stroke="#3a7a3a" stroke-width="1.5" fill="none"/>
+            <ellipse cx="312" cy="314" rx="7" ry="3.5" fill="#4a8a4a" transform="rotate(35 312 314)"/>
+            <ellipse cx="324" cy="342" rx="7" ry="3" fill="#5a9a5a" transform="rotate(20 324 342)"/>
+            <circle cx="306" cy="306" r="3.5" fill="#ffb8c8" opacity=".9"/>
+            <circle cx="320" cy="330" r="3" fill="#ffc8d8" opacity=".85"/>
+            <circle cx="324" cy="356" r="3" fill="#ff90a8" opacity=".8"/>
+          </g>
+
+          <!-- ═══ BOTTOM wrapping paper edge & final fold ═══ -->
+          <!-- Bottom gathered wrap -->
+          <path d="M140 386 Q160 378 190 376 Q220 378 240 386 L235 400 Q215 392 190 390 Q165 392 145 400 Z"
+                fill="url(#dior)" stroke="#c8a878" stroke-width=".8" opacity=".9"/>
+          <!-- Wrap bottom shadow -->
+          <path d="M145 400 Q165 408 190 410 Q215 408 235 400 L240 386 Q220 395 190 397 Q160 395 140 386 Z"
+                fill="rgba(0,0,0,.08)"/>
+
+          <!-- Caption area -->
+          <rect x="80" y="518" width="220" height="22" rx="11" fill="rgba(220,20,60,.12)"/>
+          <text x="190" y="532" text-anchor="middle" fill="#8b0020" font-family="Georgia,serif" font-size="11" font-style="italic" letter-spacing=".5">avec amour — with all my love</text>
+        </svg>
+
+        <div style="text-align:center;margin-top:10px">
+          <p style="font-family:'Playfair Display',serif;color:#DC143C;font-size:1.05rem;margin-bottom:6px">A Luxury Bouquet, Just for You</p>
+          <p style="font-size:.88rem;color:#7a2a3a;font-style:italic;line-height:1.65">Crimson roses, blush peonies, white roses, ranunculus and eucalyptus — hand-wrapped in Dior paper and tied with a silk ribbon. Because nothing is too beautiful for you, Mum.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- LUXURY -->
+<section class="luxury">
+  <p class="sec-label">Because You Deserve the Finest 👜</p>
+
+  <div class="lux-card">
+    <div style="font-size:3rem;margin-bottom:10px;display:flex;justify-content:center;gap:8px">
+      <span style="display:inline-block;animation:floatF 2.5s ease-in-out infinite">🌹</span>
+      <span style="display:inline-block;animation:floatF 2.5s ease-in-out .3s infinite">🌹</span>
+      <span style="display:inline-block;animation:floatF 2.5s ease-in-out .6s infinite">🌹</span>
+    </div>
+    <h3>A Bouquet of Roses</h3>
+    <p>Each rose is a love note — timeless, beautiful, deeply fragrant. Just like you, Mum.</p>
+  </div>
+
+  <div class="lux-card">
+    <svg class="svg-float" width="160" height="130" viewBox="0 0 160 130" fill="none">
+      <path d="M42 44 Q36 20 52 16 Q62 13 66 32" stroke="#DC143C" stroke-width="5" fill="none" stroke-linecap="round"/>
+      <path d="M118 44 Q124 20 108 16 Q98 13 94 32" stroke="#DC143C" stroke-width="5" fill="none" stroke-linecap="round"/>
+      <path d="M28 44 Q22 44 20 50 L16 108 Q15 118 26 120 L134 120 Q145 118 144 108 L140 50 Q138 44 132 44 Z" fill="#FF6B8A"/>
+      <path d="M28 44 Q30 38 48 36 L112 36 Q130 38 132 44 Z" fill="#FF1493"/>
+      <path d="M32 50 Q34 44 50 42 L110 42 Q126 44 128 50 L134 90 Q134 96 128 98 L32 98 Q26 96 26 90 Z" fill="#FF6B8A"/>
+      <path d="M32 50 Q34 44 50 42 L110 42 Q126 44 128 50 L134 90 Q134 93 128 95 L32 95 Q26 93 26 90 Z" fill="none" stroke="#DC143C" stroke-width="1.5"/>
+      <rect x="70" y="88" width="20" height="12" rx="4" fill="#FFD700"/>
+      <rect x="75" y="91" width="10" height="6" rx="2" fill="#FFA500"/>
+      <path d="M38 56 L122 56" stroke="white" stroke-width="1" stroke-dasharray="4 3" opacity=".5"/>
+      <path d="M36 68 L124 68" stroke="white" stroke-width="1" stroke-dasharray="4 3" opacity=".5"/>
+      <text x="80" y="82" text-anchor="middle" fill="white" font-family="Georgia,serif" font-size="8" letter-spacing="1" opacity=".85">HERMÈS</text>
+    </svg>
+    <h3>The Birkin, Darling</h3>
+    <p>Because you deserve the finest things in life — you are, after all, the most iconic woman I know.</p>
+  </div>
+
+  <div class="lux-card">
+    <svg class="svg-float d2" width="100" height="150" viewBox="0 0 100 150" fill="none">
+      <rect x="33" y="8" width="34" height="22" rx="6" fill="#FFB6C1"/>
+      <rect x="36" y="11" width="28" height="16" rx="4" fill="#FFC8D0"/>
+      <rect x="41" y="28" width="18" height="14" rx="3" fill="#FFCCD5"/>
+      <rect x="14" y="40" width="72" height="96" rx="16" fill="#FFE4E8"/>
+      <rect x="18" y="44" width="64" height="88" rx="13" fill="none" stroke="rgba(255,107,138,.4)" stroke-width="1.5"/>
+      <rect x="20" y="55" width="60" height="70" rx="10" fill="rgba(255,182,193,.45)"/>
+      <path d="M35 72 Q50 65 65 72 Q50 79 35 72" fill="#FF6B8A"/>
+      <ellipse cx="50" cy="72" rx="5" ry="5" fill="#DC143C"/>
+      <path d="M35 72 Q28 66 30 60 Q38 65 35 72" fill="#FF6B8A"/>
+      <path d="M65 72 Q72 66 70 60 Q62 65 65 72" fill="#FF6B8A"/>
+      <text x="50" y="96" text-anchor="middle" fill="#DC143C" font-family="Georgia,serif" font-size="11" font-style="italic" letter-spacing="1">Chloé</text>
+      <text x="50" y="108" text-anchor="middle" fill="#FF6B8A" font-family="Georgia,serif" font-size="7" letter-spacing="2">EAU DE PARFUM</text>
+      <rect x="22" y="48" width="8" height="28" rx="4" fill="rgba(255,255,255,.45)" transform="rotate(-5 26 62)"/>
+    </svg>
+    <h3>Chloé — Your Signature Scent</h3>
+    <p>Soft, feminine, unforgettable. Just like you, it fills every room with warmth and elegance.</p>
+  </div>
+</section>
+
+<!-- CLOSING -->
+<section class="closing">
+  <div class="close-card">
+    <div style="font-size:2.6rem;margin-bottom:12px">🌸💗🌸</div>
+    <h2>I love you so much, Mum</h2>
+    <p>Being your daughter is my greatest privilege. You gave me strength, kindness, and a love that knows no end. Thank you for everything you are — today and every single day.</p>
+    <div style="font-family:'Great Vibes',cursive;font-size:1.9rem;color:#FF1493;margin-bottom:22px">
+      Forever your little girl 💕
+    </div>
+    <div class="btn-row">
+      <button class="bsm" onclick="showKiss()">💋 Send a Kiss!</button>
+      <button class="bsm b2" onclick="launchConfetti()">🎉 Celebrate!</button>
+    </div>
+  </div>
+</section>
+
+<footer>Made with endless love 💗 Happy Mother's Day</footer>
+
+<script>
+// Petals
+var pc=document.getElementById('petals');
+var pe=['🌸','🌺','🌹','💗','💕','🩷','❤️','🌷'];
+for(var i=0;i<28;i++){
+  var p=document.createElement('div');p.className='petal';
+  p.textContent=pe[i%pe.length];
+  p.style.left=Math.random()*100+'vw';
+  p.style.animationDuration=(Math.random()*6+5)+'s';
+  p.style.animationDelay=(Math.random()*10)+'s';
+  p.style.fontSize=(Math.random()*.8+.8)+'rem';
+  p.style.opacity=Math.random()*.4+.25;
+  pc.appendChild(p);
+}
+
+function closeKiss(){
+  document.getElementById('kissPop').classList.add('hidden');
+  document.getElementById('welcomePop').classList.remove('hidden');
+  launchConfetti();
+}
+function closeWelcome(){
+  document.getElementById('welcomePop').classList.add('hidden');
+  launchConfetti();
+}
+function showKiss(){document.getElementById('kissPop').classList.remove('hidden');}
+
+function toggleGift(id){
+  var b=document.getElementById(id);
+  var a=document.getElementById('a'+id.replace('g',''));
+  var open=b.classList.contains('open');
+  b.classList.toggle('open',!open);
+  if(a) a.classList.toggle('open',!open);
+}
+
+function launchConfetti(){
+  var cols=['#FF1493','#DC143C','#FF6B8A','#FFB6C1','#FFF','#FF69B4','#FF0066','#FFF0F3'];
+  for(var i=0;i<60;i++){
+    (function(delay){
+      setTimeout(function(){
+        var c=document.createElement('div');
+        c.className='cp';
+        var s=Math.random()*10+4;
+        c.style.left=Math.random()*100+'vw';
+        c.style.top=Math.random()*40+'vh';
+        c.style.background=cols[Math.floor(Math.random()*cols.length)];
+        c.style.width=s+'px';
+        c.style.height=s+'px';
+        c.style.borderRadius=Math.random()>.5?'50%':'2px';
+        document.body.appendChild(c);
+        setTimeout(function(){if(c.parentNode)c.parentNode.removeChild(c);},2200);
+      },delay);
+    })(i*30);
+  }
+}
+</script>
+</body>
+</html>
