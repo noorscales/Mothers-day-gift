@@ -1,0 +1,1075 @@
+{
+  "fps": 30,
+  "duration": 38.517,
+  "durationInFrames": 1156,
+  "title": "Happy Mother's Day, Mum",
+  "alignment": "estimate",
+  "scenes": [
+    {
+      "id": "hook",
+      "beat": "hook",
+      "visual": "title",
+      "emotion": "excited",
+      "text": "Mum, I made you something no shop could ever sell.",
+      "start": 0.0,
+      "end": 3.901
+    },
+    {
+      "id": "roses",
+      "beat": "build",
+      "visual": "roses",
+      "emotion": "warm",
+      "text": "First, roses. Every single one is a love note.",
+      "start": 3.901,
+      "end": 8.129
+    },
+    {
+      "id": "bag",
+      "beat": "build",
+      "visual": "bag",
+      "emotion": "playful",
+      "text": "A Birkin, darling. Because you are the most iconic woman I know.",
+      "start": 8.129,
+      "end": 12.861
+    },
+    {
+      "id": "perfume",
+      "beat": "build",
+      "visual": "perfume",
+      "emotion": "warm",
+      "text": "And your signature scent. Soft, unforgettable. Just like you.",
+      "start": 12.861,
+      "end": 18.316
+    },
+    {
+      "id": "interrupt",
+      "beat": "pattern_interrupt",
+      "visual": "letter",
+      "emotion": "hushed",
+      "text": "But the real gift isn't any of these.",
+      "start": 18.316,
+      "end": 21.896
+    },
+    {
+      "id": "payoff",
+      "beat": "payoff",
+      "visual": "letter",
+      "emotion": "tender",
+      "text": "It's saying what I never say enough. You gave me strength, kindness, and a love that never ends.",
+      "start": 21.896,
+      "end": 30.308
+    },
+    {
+      "id": "privilege",
+      "beat": "payoff",
+      "visual": "hearts",
+      "emotion": "tender",
+      "text": "Being your daughter is my greatest privilege.",
+      "start": 30.308,
+      "end": 33.657
+    },
+    {
+      "id": "signoff",
+      "beat": "loop",
+      "visual": "title",
+      "emotion": "excited",
+      "text": "Happy Mother's Day, Mum. Forever your little girl.",
+      "start": 33.657,
+      "end": 38.517
+    }
+  ],
+  "words": [
+    {
+      "text": "Mum,",
+      "line": 0,
+      "emphasis": true,
+      "src": "estimate",
+      "index": 0,
+      "start": 0.4,
+      "end": 0.671
+    },
+    {
+      "text": "I",
+      "line": 0,
+      "emphasis": false,
+      "src": "estimate",
+      "index": 1,
+      "start": 0.755,
+      "end": 1.026
+    },
+    {
+      "text": "made",
+      "line": 0,
+      "emphasis": false,
+      "src": "estimate",
+      "index": 2,
+      "start": 1.026,
+      "end": 1.297
+    },
+    {
+      "text": "you",
+      "line": 0,
+      "emphasis": false,
+      "src": "estimate",
+      "index": 3,
+      "start": 1.297,
+      "end": 1.568
+    },
+    {
+      "text": "something",
+      "line": 0,
+      "emphasis": false,
+      "src": "estimate",
+      "index": 4,
+      "start": 1.568,
+      "end": 2.177
+    },
+    {
+      "text": "no",
+      "line": 0,
+      "emphasis": true,
+      "src": "estimate",
+      "index": 5,
+      "start": 2.177,
+      "end": 2.448
+    },
+    {
+      "text": "shop",
+      "line": 0,
+      "emphasis": true,
+      "src": "estimate",
+      "index": 6,
+      "start": 2.448,
+      "end": 2.719
+    },
+    {
+      "text": "could",
+      "line": 0,
+      "emphasis": false,
+      "src": "estimate",
+      "index": 7,
+      "start": 2.719,
+      "end": 2.99
+    },
+    {
+      "text": "ever",
+      "line": 0,
+      "emphasis": false,
+      "src": "estimate",
+      "index": 8,
+      "start": 2.99,
+      "end": 3.43
+    },
+    {
+      "text": "sell.",
+      "line": 0,
+      "emphasis": false,
+      "src": "estimate",
+      "index": 9,
+      "start": 3.43,
+      "end": 3.701
+    },
+    {
+      "text": "First,",
+      "line": 1,
+      "emphasis": false,
+      "src": "estimate",
+      "index": 10,
+      "start": 4.051,
+      "end": 4.385
+    },
+    {
+      "text": "roses.",
+      "line": 1,
+      "emphasis": true,
+      "src": "estimate",
+      "index": 11,
+      "start": 4.49,
+      "end": 5.033
+    },
+    {
+      "text": "Every",
+      "line": 1,
+      "emphasis": false,
+      "src": "estimate",
+      "index": 12,
+      "start": 5.221,
+      "end": 5.973
+    },
+    {
+      "text": "single",
+      "line": 1,
+      "emphasis": false,
+      "src": "estimate",
+      "index": 13,
+      "start": 5.973,
+      "end": 6.308
+    },
+    {
+      "text": "one",
+      "line": 1,
+      "emphasis": false,
+      "src": "estimate",
+      "index": 14,
+      "start": 6.308,
+      "end": 6.642
+    },
+    {
+      "text": "is",
+      "line": 1,
+      "emphasis": false,
+      "src": "estimate",
+      "index": 15,
+      "start": 6.642,
+      "end": 6.976
+    },
+    {
+      "text": "a",
+      "line": 1,
+      "emphasis": false,
+      "src": "estimate",
+      "index": 16,
+      "start": 6.976,
+      "end": 7.31
+    },
+    {
+      "text": "love",
+      "line": 1,
+      "emphasis": true,
+      "src": "estimate",
+      "index": 17,
+      "start": 7.31,
+      "end": 7.645
+    },
+    {
+      "text": "note.",
+      "line": 1,
+      "emphasis": true,
+      "src": "estimate",
+      "index": 18,
+      "start": 7.645,
+      "end": 7.979
+    },
+    {
+      "text": "A",
+      "line": 2,
+      "emphasis": false,
+      "src": "estimate",
+      "index": 19,
+      "start": 8.279,
+      "end": 8.546
+    },
+    {
+      "text": "Birkin,",
+      "line": 2,
+      "emphasis": true,
+      "src": "estimate",
+      "index": 20,
+      "start": 8.546,
+      "end": 8.979
+    },
+    {
+      "text": "darling.",
+      "line": 2,
+      "emphasis": false,
+      "src": "estimate",
+      "index": 21,
+      "start": 9.062,
+      "end": 9.495
+    },
+    {
+      "text": "Because",
+      "line": 2,
+      "emphasis": false,
+      "src": "estimate",
+      "index": 22,
+      "start": 9.645,
+      "end": 10.078
+    },
+    {
+      "text": "you",
+      "line": 2,
+      "emphasis": false,
+      "src": "estimate",
+      "index": 23,
+      "start": 10.078,
+      "end": 10.345
+    },
+    {
+      "text": "are",
+      "line": 2,
+      "emphasis": false,
+      "src": "estimate",
+      "index": 24,
+      "start": 10.345,
+      "end": 10.612
+    },
+    {
+      "text": "the",
+      "line": 2,
+      "emphasis": false,
+      "src": "estimate",
+      "index": 25,
+      "start": 10.612,
+      "end": 10.878
+    },
+    {
+      "text": "most",
+      "line": 2,
+      "emphasis": false,
+      "src": "estimate",
+      "index": 26,
+      "start": 10.878,
+      "end": 11.145
+    },
+    {
+      "text": "iconic",
+      "line": 2,
+      "emphasis": true,
+      "src": "estimate",
+      "index": 27,
+      "start": 11.145,
+      "end": 11.745
+    },
+    {
+      "text": "woman",
+      "line": 2,
+      "emphasis": false,
+      "src": "estimate",
+      "index": 28,
+      "start": 11.745,
+      "end": 12.178
+    },
+    {
+      "text": "I",
+      "line": 2,
+      "emphasis": false,
+      "src": "estimate",
+      "index": 29,
+      "start": 12.178,
+      "end": 12.444
+    },
+    {
+      "text": "know.",
+      "line": 2,
+      "emphasis": false,
+      "src": "estimate",
+      "index": 30,
+      "start": 12.444,
+      "end": 12.711
+    },
+    {
+      "text": "And",
+      "line": 3,
+      "emphasis": false,
+      "src": "estimate",
+      "index": 31,
+      "start": 13.011,
+      "end": 13.376
+    },
+    {
+      "text": "your",
+      "line": 3,
+      "emphasis": false,
+      "src": "estimate",
+      "index": 32,
+      "start": 13.376,
+      "end": 13.742
+    },
+    {
+      "text": "signature",
+      "line": 3,
+      "emphasis": true,
+      "src": "estimate",
+      "index": 33,
+      "start": 13.742,
+      "end": 14.564
+    },
+    {
+      "text": "scent.",
+      "line": 3,
+      "emphasis": false,
+      "src": "estimate",
+      "index": 34,
+      "start": 14.564,
+      "end": 14.929
+    },
+    {
+      "text": "Soft,",
+      "line": 3,
+      "emphasis": false,
+      "src": "estimate",
+      "index": 35,
+      "start": 15.135,
+      "end": 15.5
+    },
+    {
+      "text": "unforgettable.",
+      "line": 3,
+      "emphasis": false,
+      "src": "estimate",
+      "index": 36,
+      "start": 15.614,
+      "end": 16.664
+    },
+    {
+      "text": "Just",
+      "line": 3,
+      "emphasis": true,
+      "src": "estimate",
+      "index": 37,
+      "start": 16.87,
+      "end": 17.235
+    },
+    {
+      "text": "like",
+      "line": 3,
+      "emphasis": true,
+      "src": "estimate",
+      "index": 38,
+      "start": 17.235,
+      "end": 17.601
+    },
+    {
+      "text": "you.",
+      "line": 3,
+      "emphasis": true,
+      "src": "estimate",
+      "index": 39,
+      "start": 17.601,
+      "end": 17.966
+    },
+    {
+      "text": "But",
+      "line": 4,
+      "emphasis": false,
+      "src": "estimate",
+      "index": 40,
+      "start": 18.466,
+      "end": 18.812
+    },
+    {
+      "text": "the",
+      "line": 4,
+      "emphasis": false,
+      "src": "estimate",
+      "index": 41,
+      "start": 18.812,
+      "end": 19.157
+    },
+    {
+      "text": "real",
+      "line": 4,
+      "emphasis": true,
+      "src": "estimate",
+      "index": 42,
+      "start": 19.157,
+      "end": 19.503
+    },
+    {
+      "text": "gift",
+      "line": 4,
+      "emphasis": true,
+      "src": "estimate",
+      "index": 43,
+      "start": 19.503,
+      "end": 19.848
+    },
+    {
+      "text": "isn't",
+      "line": 4,
+      "emphasis": false,
+      "src": "estimate",
+      "index": 44,
+      "start": 19.848,
+      "end": 20.194
+    },
+    {
+      "text": "any",
+      "line": 4,
+      "emphasis": false,
+      "src": "estimate",
+      "index": 45,
+      "start": 20.194,
+      "end": 20.755
+    },
+    {
+      "text": "of",
+      "line": 4,
+      "emphasis": false,
+      "src": "estimate",
+      "index": 46,
+      "start": 20.755,
+      "end": 21.1
+    },
+    {
+      "text": "these.",
+      "line": 4,
+      "emphasis": false,
+      "src": "estimate",
+      "index": 47,
+      "start": 21.1,
+      "end": 21.446
+    },
+    {
+      "text": "It's",
+      "line": 5,
+      "emphasis": false,
+      "src": "estimate",
+      "index": 48,
+      "start": 22.046,
+      "end": 22.415
+    },
+    {
+      "text": "saying",
+      "line": 5,
+      "emphasis": false,
+      "src": "estimate",
+      "index": 49,
+      "start": 22.415,
+      "end": 22.785
+    },
+    {
+      "text": "what",
+      "line": 5,
+      "emphasis": false,
+      "src": "estimate",
+      "index": 50,
+      "start": 22.785,
+      "end": 23.154
+    },
+    {
+      "text": "I",
+      "line": 5,
+      "emphasis": false,
+      "src": "estimate",
+      "index": 51,
+      "start": 23.154,
+      "end": 23.524
+    },
+    {
+      "text": "never",
+      "line": 5,
+      "emphasis": true,
+      "src": "estimate",
+      "index": 52,
+      "start": 23.524,
+      "end": 24.124
+    },
+    {
+      "text": "say",
+      "line": 5,
+      "emphasis": false,
+      "src": "estimate",
+      "index": 53,
+      "start": 24.124,
+      "end": 24.493
+    },
+    {
+      "text": "enough.",
+      "line": 5,
+      "emphasis": false,
+      "src": "estimate",
+      "index": 54,
+      "start": 24.493,
+      "end": 25.094
+    },
+    {
+      "text": "You",
+      "line": 5,
+      "emphasis": false,
+      "src": "estimate",
+      "index": 55,
+      "start": 25.302,
+      "end": 25.671
+    },
+    {
+      "text": "gave",
+      "line": 5,
+      "emphasis": false,
+      "src": "estimate",
+      "index": 56,
+      "start": 25.671,
+      "end": 26.04
+    },
+    {
+      "text": "me",
+      "line": 5,
+      "emphasis": false,
+      "src": "estimate",
+      "index": 57,
+      "start": 26.04,
+      "end": 26.41
+    },
+    {
+      "text": "strength,",
+      "line": 5,
+      "emphasis": true,
+      "src": "estimate",
+      "index": 58,
+      "start": 26.41,
+      "end": 26.779
+    },
+    {
+      "text": "kindness,",
+      "line": 5,
+      "emphasis": true,
+      "src": "estimate",
+      "index": 59,
+      "start": 26.895,
+      "end": 27.495
+    },
+    {
+      "text": "and",
+      "line": 5,
+      "emphasis": false,
+      "src": "estimate",
+      "index": 60,
+      "start": 27.611,
+      "end": 27.98
+    },
+    {
+      "text": "a",
+      "line": 5,
+      "emphasis": false,
+      "src": "estimate",
+      "index": 61,
+      "start": 27.98,
+      "end": 28.349
+    },
+    {
+      "text": "love",
+      "line": 5,
+      "emphasis": false,
+      "src": "estimate",
+      "index": 62,
+      "start": 28.349,
+      "end": 28.719
+    },
+    {
+      "text": "that",
+      "line": 5,
+      "emphasis": false,
+      "src": "estimate",
+      "index": 63,
+      "start": 28.719,
+      "end": 29.088
+    },
+    {
+      "text": "never",
+      "line": 5,
+      "emphasis": true,
+      "src": "estimate",
+      "index": 64,
+      "start": 29.088,
+      "end": 29.689
+    },
+    {
+      "text": "ends.",
+      "line": 5,
+      "emphasis": true,
+      "src": "estimate",
+      "index": 65,
+      "start": 29.689,
+      "end": 30.058
+    },
+    {
+      "text": "Being",
+      "line": 6,
+      "emphasis": false,
+      "src": "estimate",
+      "index": 66,
+      "start": 30.458,
+      "end": 30.768
+    },
+    {
+      "text": "your",
+      "line": 6,
+      "emphasis": false,
+      "src": "estimate",
+      "index": 67,
+      "start": 30.768,
+      "end": 31.079
+    },
+    {
+      "text": "daughter",
+      "line": 6,
+      "emphasis": false,
+      "src": "estimate",
+      "index": 68,
+      "start": 31.079,
+      "end": 31.583
+    },
+    {
+      "text": "is",
+      "line": 6,
+      "emphasis": false,
+      "src": "estimate",
+      "index": 69,
+      "start": 31.583,
+      "end": 31.894
+    },
+    {
+      "text": "my",
+      "line": 6,
+      "emphasis": false,
+      "src": "estimate",
+      "index": 70,
+      "start": 31.894,
+      "end": 32.204
+    },
+    {
+      "text": "greatest",
+      "line": 6,
+      "emphasis": true,
+      "src": "estimate",
+      "index": 71,
+      "start": 32.204,
+      "end": 32.709
+    },
+    {
+      "text": "privilege.",
+      "line": 6,
+      "emphasis": true,
+      "src": "estimate",
+      "index": 72,
+      "start": 32.709,
+      "end": 33.407
+    },
+    {
+      "text": "Happy",
+      "line": 7,
+      "emphasis": true,
+      "src": "estimate",
+      "index": 73,
+      "start": 33.807,
+      "end": 34.28
+    },
+    {
+      "text": "Mother's",
+      "line": 7,
+      "emphasis": true,
+      "src": "estimate",
+      "index": 74,
+      "start": 34.28,
+      "end": 34.753
+    },
+    {
+      "text": "Day,",
+      "line": 7,
+      "emphasis": true,
+      "src": "estimate",
+      "index": 75,
+      "start": 34.753,
+      "end": 35.044
+    },
+    {
+      "text": "Mum.",
+      "line": 7,
+      "emphasis": false,
+      "src": "estimate",
+      "index": 76,
+      "start": 35.135,
+      "end": 35.426
+    },
+    {
+      "text": "Forever",
+      "line": 7,
+      "emphasis": false,
+      "src": "estimate",
+      "index": 77,
+      "start": 35.589,
+      "end": 36.244
+    },
+    {
+      "text": "your",
+      "line": 7,
+      "emphasis": false,
+      "src": "estimate",
+      "index": 78,
+      "start": 36.244,
+      "end": 36.535
+    },
+    {
+      "text": "little",
+      "line": 7,
+      "emphasis": true,
+      "src": "estimate",
+      "index": 79,
+      "start": 36.535,
+      "end": 36.826
+    },
+    {
+      "text": "girl.",
+      "line": 7,
+      "emphasis": true,
+      "src": "estimate",
+      "index": 80,
+      "start": 36.826,
+      "end": 37.117
+    }
+  ],
+  "captions": [
+    {
+      "start": 0.4,
+      "end": 0.671,
+      "words": [
+        0
+      ]
+    },
+    {
+      "start": 0.755,
+      "end": 2.177,
+      "words": [
+        1,
+        2,
+        3,
+        4
+      ]
+    },
+    {
+      "start": 2.177,
+      "end": 3.43,
+      "words": [
+        5,
+        6,
+        7,
+        8
+      ]
+    },
+    {
+      "start": 3.43,
+      "end": 3.701,
+      "words": [
+        9
+      ]
+    },
+    {
+      "start": 4.051,
+      "end": 4.385,
+      "words": [
+        10
+      ]
+    },
+    {
+      "start": 4.49,
+      "end": 5.033,
+      "words": [
+        11
+      ]
+    },
+    {
+      "start": 5.221,
+      "end": 6.976,
+      "words": [
+        12,
+        13,
+        14,
+        15
+      ]
+    },
+    {
+      "start": 6.976,
+      "end": 7.979,
+      "words": [
+        16,
+        17,
+        18
+      ]
+    },
+    {
+      "start": 8.279,
+      "end": 8.979,
+      "words": [
+        19,
+        20
+      ]
+    },
+    {
+      "start": 9.062,
+      "end": 9.495,
+      "words": [
+        21
+      ]
+    },
+    {
+      "start": 9.645,
+      "end": 10.878,
+      "words": [
+        22,
+        23,
+        24,
+        25
+      ]
+    },
+    {
+      "start": 10.878,
+      "end": 12.444,
+      "words": [
+        26,
+        27,
+        28,
+        29
+      ]
+    },
+    {
+      "start": 12.444,
+      "end": 12.711,
+      "words": [
+        30
+      ]
+    },
+    {
+      "start": 13.011,
+      "end": 14.929,
+      "words": [
+        31,
+        32,
+        33,
+        34
+      ]
+    },
+    {
+      "start": 15.135,
+      "end": 15.5,
+      "words": [
+        35
+      ]
+    },
+    {
+      "start": 15.614,
+      "end": 16.664,
+      "words": [
+        36
+      ]
+    },
+    {
+      "start": 16.87,
+      "end": 17.966,
+      "words": [
+        37,
+        38,
+        39
+      ]
+    },
+    {
+      "start": 18.466,
+      "end": 19.848,
+      "words": [
+        40,
+        41,
+        42,
+        43
+      ]
+    },
+    {
+      "start": 19.848,
+      "end": 21.446,
+      "words": [
+        44,
+        45,
+        46,
+        47
+      ]
+    },
+    {
+      "start": 22.046,
+      "end": 23.524,
+      "words": [
+        48,
+        49,
+        50,
+        51
+      ]
+    },
+    {
+      "start": 23.524,
+      "end": 25.094,
+      "words": [
+        52,
+        53,
+        54
+      ]
+    },
+    {
+      "start": 25.302,
+      "end": 26.779,
+      "words": [
+        55,
+        56,
+        57,
+        58
+      ]
+    },
+    {
+      "start": 26.895,
+      "end": 27.495,
+      "words": [
+        59
+      ]
+    },
+    {
+      "start": 27.611,
+      "end": 29.088,
+      "words": [
+        60,
+        61,
+        62,
+        63
+      ]
+    },
+    {
+      "start": 29.088,
+      "end": 30.058,
+      "words": [
+        64,
+        65
+      ]
+    },
+    {
+      "start": 30.458,
+      "end": 31.894,
+      "words": [
+        66,
+        67,
+        68,
+        69
+      ]
+    },
+    {
+      "start": 31.894,
+      "end": 33.407,
+      "words": [
+        70,
+        71,
+        72
+      ]
+    },
+    {
+      "start": 33.807,
+      "end": 35.044,
+      "words": [
+        73,
+        74,
+        75
+      ]
+    },
+    {
+      "start": 35.135,
+      "end": 35.426,
+      "words": [
+        76
+      ]
+    },
+    {
+      "start": 35.589,
+      "end": 37.117,
+      "words": [
+        77,
+        78,
+        79,
+        80
+      ]
+    }
+  ]
+}

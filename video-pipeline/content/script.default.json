@@ -1,0 +1,83 @@
+{
+  "title": "Happy Mother's Day, Mum",
+  "strategy": {
+    "hook": "Open on a direct, personal promise in under 3 seconds so the viewer (Mum) knows it is about her.",
+    "pacing": "One idea per line, 2-5 s each; each gift gets a single vivid image and one compliment.",
+    "retention": "Pattern interrupt at ~60% ('But the real gift isn't any of these') re-opens the curiosity loop before the emotional payoff.",
+    "loop": "The last line rhymes with the first visual (title card) so a replay feels seamless."
+  },
+  "lines": [
+    {
+      "id": "hook",
+      "beat": "hook",
+      "text": "Mum, I made you something no shop could ever sell.",
+      "emotion": "excited",
+      "visual": "title",
+      "emphasis": ["Mum", "no shop"],
+      "pause_after": 0.35
+    },
+    {
+      "id": "roses",
+      "beat": "build",
+      "text": "First, roses. Every single one is a love note.",
+      "emotion": "warm",
+      "visual": "roses",
+      "emphasis": ["roses", "love note"],
+      "pause_after": 0.3
+    },
+    {
+      "id": "bag",
+      "beat": "build",
+      "text": "A Birkin, darling. Because you are the most iconic woman I know.",
+      "emotion": "playful",
+      "visual": "bag",
+      "emphasis": ["Birkin", "iconic"],
+      "pause_after": 0.3
+    },
+    {
+      "id": "perfume",
+      "beat": "build",
+      "text": "And your signature scent. Soft, unforgettable. Just like you.",
+      "emotion": "warm",
+      "visual": "perfume",
+      "emphasis": ["signature", "Just like you"],
+      "pause_after": 0.5
+    },
+    {
+      "id": "interrupt",
+      "beat": "pattern_interrupt",
+      "text": "But the real gift isn't any of these.",
+      "emotion": "hushed",
+      "visual": "letter",
+      "emphasis": ["real gift"],
+      "pause_after": 0.6
+    },
+    {
+      "id": "payoff",
+      "beat": "payoff",
+      "text": "It's saying what I never say enough. You gave me strength, kindness, and a love that never ends.",
+      "emotion": "tender",
+      "visual": "letter",
+      "emphasis": ["strength", "kindness", "never ends"],
+      "pause_after": 0.4
+    },
+    {
+      "id": "privilege",
+      "beat": "payoff",
+      "text": "Being your daughter is my greatest privilege.",
+      "emotion": "tender",
+      "visual": "hearts",
+      "emphasis": ["greatest privilege"],
+      "pause_after": 0.4
+    },
+    {
+      "id": "signoff",
+      "beat": "loop",
+      "text": "Happy Mother's Day, Mum. Forever your little girl.",
+      "emotion": "excited",
+      "visual": "title",
+      "emphasis": ["Happy Mother's Day", "little girl"],
+      "pause_after": 0.8
+    }
+  ]
+}

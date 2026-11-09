@@ -1,0 +1,5 @@
+# Stage 1 — scriptwriting (optional: without a key the bundled script is used)
+anthropic>=2.6
+pydantic>=2
+# Stage 4 — word timestamps (optional: falls back to estimates if unavailable)
+faster-whisper>=1.0
