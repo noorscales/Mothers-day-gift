@@ -1,0 +1,1220 @@
+{
+  "fps": 30,
+  "duration": 42.985,
+  "durationInFrames": 1290,
+  "title": "Risk First: 3 rules that keep traders alive",
+  "project": "trading",
+  "alignment": "estimate",
+  "scenes": [
+    {
+      "id": "hook",
+      "beat": "hook",
+      "visual": "crash",
+      "emotion": "urgent",
+      "text": "Most traders don't blow up from bad entries. They blow up from bad sizing.",
+      "start": 0.0,
+      "end": 5.519
+    },
+    {
+      "id": "rule1",
+      "beat": "build",
+      "visual": "risk",
+      "emotion": "confident",
+      "text": "Rule one: risk one percent of your account per trade. Max.",
+      "start": 5.519,
+      "end": 10.485
+    },
+    {
+      "id": "drawdown",
+      "beat": "build",
+      "visual": "drawdown",
+      "emotion": "emphatic",
+      "text": "Ten losses in a row? You still have ninety percent. At ten percent risk? About a third.",
+      "start": 10.485,
+      "end": 18.056
+    },
+    {
+      "id": "rule2",
+      "beat": "build",
+      "visual": "stoploss",
+      "emotion": "confident",
+      "text": "Rule two: set your stop before you enter. Not after it hurts.",
+      "start": 18.056,
+      "end": 23.142
+    },
+    {
+      "id": "rule3",
+      "beat": "build",
+      "visual": "rr",
+      "emotion": "confident",
+      "text": "Rule three: only take trades that pay at least twice the risk.",
+      "start": 23.142,
+      "end": 28.072
+    },
+    {
+      "id": "interrupt",
+      "beat": "pattern_interrupt",
+      "visual": "winrate",
+      "emotion": "hushed",
+      "text": "Here's the part nobody posts.",
+      "start": 28.072,
+      "end": 31.019
+    },
+    {
+      "id": "payoff",
+      "beat": "payoff",
+      "visual": "winrate",
+      "emotion": "emphatic",
+      "text": "At two to one, you can lose six trades out of ten and still profit.",
+      "start": 31.019,
+      "end": 36.665
+    },
+    {
+      "id": "close",
+      "beat": "loop",
+      "visual": "title",
+      "emotion": "calm",
+      "text": "Protect the downside first. Save this for your next trade.",
+      "start": 36.665,
+      "end": 42.985
+    }
+  ],
+  "words": [
+    {
+      "text": "Most",
+      "line": 0,
+      "emphasis": false,
+      "src": "estimate",
+      "index": 0,
+      "start": 0.4,
+      "end": 0.699
+    },
+    {
+      "text": "traders",
+      "line": 0,
+      "emphasis": false,
+      "src": "estimate",
+      "index": 1,
+      "start": 0.699,
+      "end": 1.186
+    },
+    {
+      "text": "don't",
+      "line": 0,
+      "emphasis": false,
+      "src": "estimate",
+      "index": 2,
+      "start": 1.186,
+      "end": 1.485
+    },
+    {
+      "text": "blow",
+      "line": 0,
+      "emphasis": true,
+      "src": "estimate",
+      "index": 3,
+      "start": 1.485,
+      "end": 1.784
+    },
+    {
+      "text": "up",
+      "line": 0,
+      "emphasis": true,
+      "src": "estimate",
+      "index": 4,
+      "start": 1.784,
+      "end": 2.083
+    },
+    {
+      "text": "from",
+      "line": 0,
+      "emphasis": false,
+      "src": "estimate",
+      "index": 5,
+      "start": 2.083,
+      "end": 2.383
+    },
+    {
+      "text": "bad",
+      "line": 0,
+      "emphasis": true,
+      "src": "estimate",
+      "index": 6,
+      "start": 2.383,
+      "end": 2.682
+    },
+    {
+      "text": "entries.",
+      "line": 0,
+      "emphasis": false,
+      "src": "estimate",
+      "index": 7,
+      "start": 2.682,
+      "end": 3.168
+    },
+    {
+      "text": "They",
+      "line": 0,
+      "emphasis": false,
+      "src": "estimate",
+      "index": 8,
+      "start": 3.336,
+      "end": 3.636
+    },
+    {
+      "text": "blow",
+      "line": 0,
+      "emphasis": true,
+      "src": "estimate",
+      "index": 9,
+      "start": 3.636,
+      "end": 3.935
+    },
+    {
+      "text": "up",
+      "line": 0,
+      "emphasis": true,
+      "src": "estimate",
+      "index": 10,
+      "start": 3.935,
+      "end": 4.234
+    },
+    {
+      "text": "from",
+      "line": 0,
+      "emphasis": false,
+      "src": "estimate",
+      "index": 11,
+      "start": 4.234,
+      "end": 4.533
+    },
+    {
+      "text": "bad",
+      "line": 0,
+      "emphasis": true,
+      "src": "estimate",
+      "index": 12,
+      "start": 4.533,
+      "end": 4.833
+    },
+    {
+      "text": "sizing.",
+      "line": 0,
+      "emphasis": true,
+      "src": "estimate",
+      "index": 13,
+      "start": 4.833,
+      "end": 5.319
+    },
+    {
+      "text": "Rule",
+      "line": 1,
+      "emphasis": false,
+      "src": "estimate",
+      "index": 14,
+      "start": 5.669,
+      "end": 6.025
+    },
+    {
+      "text": "one:",
+      "line": 1,
+      "emphasis": true,
+      "src": "estimate",
+      "index": 15,
+      "start": 6.025,
+      "end": 6.38
+    },
+    {
+      "text": "risk",
+      "line": 1,
+      "emphasis": false,
+      "src": "estimate",
+      "index": 16,
+      "start": 6.491,
+      "end": 6.847
+    },
+    {
+      "text": "one",
+      "line": 1,
+      "emphasis": true,
+      "src": "estimate",
+      "index": 17,
+      "start": 6.847,
+      "end": 7.202
+    },
+    {
+      "text": "percent",
+      "line": 1,
+      "emphasis": true,
+      "src": "estimate",
+      "index": 18,
+      "start": 7.202,
+      "end": 7.78
+    },
+    {
+      "text": "of",
+      "line": 1,
+      "emphasis": false,
+      "src": "estimate",
+      "index": 19,
+      "start": 7.78,
+      "end": 8.135
+    },
+    {
+      "text": "your",
+      "line": 1,
+      "emphasis": false,
+      "src": "estimate",
+      "index": 20,
+      "start": 8.135,
+      "end": 8.491
+    },
+    {
+      "text": "account",
+      "line": 1,
+      "emphasis": false,
+      "src": "estimate",
+      "index": 21,
+      "start": 8.491,
+      "end": 9.069
+    },
+    {
+      "text": "per",
+      "line": 1,
+      "emphasis": false,
+      "src": "estimate",
+      "index": 22,
+      "start": 9.069,
+      "end": 9.424
+    },
+    {
+      "text": "trade.",
+      "line": 1,
+      "emphasis": false,
+      "src": "estimate",
+      "index": 23,
+      "start": 9.424,
+      "end": 9.78
+    },
+    {
+      "text": "Max.",
+      "line": 1,
+      "emphasis": false,
+      "src": "estimate",
+      "index": 24,
+      "start": 9.979,
+      "end": 10.335
+    },
+    {
+      "text": "Ten",
+      "line": 2,
+      "emphasis": false,
+      "src": "estimate",
+      "index": 25,
+      "start": 10.635,
+      "end": 10.957
+    },
+    {
+      "text": "losses",
+      "line": 2,
+      "emphasis": false,
+      "src": "estimate",
+      "index": 26,
+      "start": 10.957,
+      "end": 11.48
+    },
+    {
+      "text": "in",
+      "line": 2,
+      "emphasis": false,
+      "src": "estimate",
+      "index": 27,
+      "start": 11.48,
+      "end": 11.802
+    },
+    {
+      "text": "a",
+      "line": 2,
+      "emphasis": true,
+      "src": "estimate",
+      "index": 28,
+      "start": 11.802,
+      "end": 12.123
+    },
+    {
+      "text": "row?",
+      "line": 2,
+      "emphasis": false,
+      "src": "estimate",
+      "index": 29,
+      "start": 12.123,
+      "end": 12.445
+    },
+    {
+      "text": "You",
+      "line": 2,
+      "emphasis": false,
+      "src": "estimate",
+      "index": 30,
+      "start": 12.626,
+      "end": 12.948
+    },
+    {
+      "text": "still",
+      "line": 2,
+      "emphasis": false,
+      "src": "estimate",
+      "index": 31,
+      "start": 12.948,
+      "end": 13.27
+    },
+    {
+      "text": "have",
+      "line": 2,
+      "emphasis": false,
+      "src": "estimate",
+      "index": 32,
+      "start": 13.27,
+      "end": 13.592
+    },
+    {
+      "text": "ninety",
+      "line": 2,
+      "emphasis": true,
+      "src": "estimate",
+      "index": 33,
+      "start": 13.592,
+      "end": 14.316
+    },
+    {
+      "text": "percent.",
+      "line": 2,
+      "emphasis": true,
+      "src": "estimate",
+      "index": 34,
+      "start": 14.316,
+      "end": 14.839
+    },
+    {
+      "text": "At",
+      "line": 2,
+      "emphasis": false,
+      "src": "estimate",
+      "index": 35,
+      "start": 15.02,
+      "end": 15.342
+    },
+    {
+      "text": "ten",
+      "line": 2,
+      "emphasis": false,
+      "src": "estimate",
+      "index": 36,
+      "start": 15.342,
+      "end": 15.664
+    },
+    {
+      "text": "percent",
+      "line": 2,
+      "emphasis": true,
+      "src": "estimate",
+      "index": 37,
+      "start": 15.664,
+      "end": 16.187
+    },
+    {
+      "text": "risk?",
+      "line": 2,
+      "emphasis": false,
+      "src": "estimate",
+      "index": 38,
+      "start": 16.187,
+      "end": 16.508
+    },
+    {
+      "text": "About",
+      "line": 2,
+      "emphasis": false,
+      "src": "estimate",
+      "index": 39,
+      "start": 16.689,
+      "end": 17.212
+    },
+    {
+      "text": "a",
+      "line": 2,
+      "emphasis": true,
+      "src": "estimate",
+      "index": 40,
+      "start": 17.212,
+      "end": 17.534
+    },
+    {
+      "text": "third.",
+      "line": 2,
+      "emphasis": true,
+      "src": "estimate",
+      "index": 41,
+      "start": 17.534,
+      "end": 17.856
+    },
+    {
+      "text": "Rule",
+      "line": 3,
+      "emphasis": false,
+      "src": "estimate",
+      "index": 42,
+      "start": 18.206,
+      "end": 18.53
+    },
+    {
+      "text": "two:",
+      "line": 3,
+      "emphasis": false,
+      "src": "estimate",
+      "index": 43,
+      "start": 18.53,
+      "end": 18.855
+    },
+    {
+      "text": "set",
+      "line": 3,
+      "emphasis": false,
+      "src": "estimate",
+      "index": 44,
+      "start": 18.956,
+      "end": 19.281
+    },
+    {
+      "text": "your",
+      "line": 3,
+      "emphasis": false,
+      "src": "estimate",
+      "index": 45,
+      "start": 19.281,
+      "end": 19.605
+    },
+    {
+      "text": "stop",
+      "line": 3,
+      "emphasis": true,
+      "src": "estimate",
+      "index": 46,
+      "start": 19.605,
+      "end": 19.93
+    },
+    {
+      "text": "before",
+      "line": 3,
+      "emphasis": true,
+      "src": "estimate",
+      "index": 47,
+      "start": 19.93,
+      "end": 20.457
+    },
+    {
+      "text": "you",
+      "line": 3,
+      "emphasis": false,
+      "src": "estimate",
+      "index": 48,
+      "start": 20.457,
+      "end": 20.782
+    },
+    {
+      "text": "enter.",
+      "line": 3,
+      "emphasis": false,
+      "src": "estimate",
+      "index": 49,
+      "start": 20.782,
+      "end": 21.309
+    },
+    {
+      "text": "Not",
+      "line": 3,
+      "emphasis": false,
+      "src": "estimate",
+      "index": 50,
+      "start": 21.491,
+      "end": 21.816
+    },
+    {
+      "text": "after",
+      "line": 3,
+      "emphasis": false,
+      "src": "estimate",
+      "index": 51,
+      "start": 21.816,
+      "end": 22.343
+    },
+    {
+      "text": "it",
+      "line": 3,
+      "emphasis": false,
+      "src": "estimate",
+      "index": 52,
+      "start": 22.343,
+      "end": 22.668
+    },
+    {
+      "text": "hurts.",
+      "line": 3,
+      "emphasis": false,
+      "src": "estimate",
+      "index": 53,
+      "start": 22.668,
+      "end": 22.992
+    },
+    {
+      "text": "Rule",
+      "line": 4,
+      "emphasis": false,
+      "src": "estimate",
+      "index": 54,
+      "start": 23.292,
+      "end": 23.619
+    },
+    {
+      "text": "three:",
+      "line": 4,
+      "emphasis": false,
+      "src": "estimate",
+      "index": 55,
+      "start": 23.619,
+      "end": 23.945
+    },
+    {
+      "text": "only",
+      "line": 4,
+      "emphasis": false,
+      "src": "estimate",
+      "index": 56,
+      "start": 24.047,
+      "end": 24.578
+    },
+    {
+      "text": "take",
+      "line": 4,
+      "emphasis": false,
+      "src": "estimate",
+      "index": 57,
+      "start": 24.578,
+      "end": 24.905
+    },
+    {
+      "text": "trades",
+      "line": 4,
+      "emphasis": false,
+      "src": "estimate",
+      "index": 58,
+      "start": 24.905,
+      "end": 25.436
+    },
+    {
+      "text": "that",
+      "line": 4,
+      "emphasis": false,
+      "src": "estimate",
+      "index": 59,
+      "start": 25.436,
+      "end": 25.762
+    },
+    {
+      "text": "pay",
+      "line": 4,
+      "emphasis": false,
+      "src": "estimate",
+      "index": 60,
+      "start": 25.762,
+      "end": 26.089
+    },
+    {
+      "text": "at",
+      "line": 4,
+      "emphasis": false,
+      "src": "estimate",
+      "index": 61,
+      "start": 26.089,
+      "end": 26.415
+    },
+    {
+      "text": "least",
+      "line": 4,
+      "emphasis": false,
+      "src": "estimate",
+      "index": 62,
+      "start": 26.415,
+      "end": 26.742
+    },
+    {
+      "text": "twice",
+      "line": 4,
+      "emphasis": true,
+      "src": "estimate",
+      "index": 63,
+      "start": 26.742,
+      "end": 27.069
+    },
+    {
+      "text": "the",
+      "line": 4,
+      "emphasis": true,
+      "src": "estimate",
+      "index": 64,
+      "start": 27.069,
+      "end": 27.395
+    },
+    {
+      "text": "risk.",
+      "line": 4,
+      "emphasis": true,
+      "src": "estimate",
+      "index": 65,
+      "start": 27.395,
+      "end": 27.722
+    },
+    {
+      "text": "Here's",
+      "line": 5,
+      "emphasis": false,
+      "src": "estimate",
+      "index": 66,
+      "start": 28.222,
+      "end": 28.824
+    },
+    {
+      "text": "the",
+      "line": 5,
+      "emphasis": false,
+      "src": "estimate",
+      "index": 67,
+      "start": 28.824,
+      "end": 29.194
+    },
+    {
+      "text": "part",
+      "line": 5,
+      "emphasis": false,
+      "src": "estimate",
+      "index": 68,
+      "start": 29.194,
+      "end": 29.565
+    },
+    {
+      "text": "nobody",
+      "line": 5,
+      "emphasis": true,
+      "src": "estimate",
+      "index": 69,
+      "start": 29.565,
+      "end": 30.399
+    },
+    {
+      "text": "posts.",
+      "line": 5,
+      "emphasis": true,
+      "src": "estimate",
+      "index": 70,
+      "start": 30.399,
+      "end": 30.769
+    },
+    {
+      "text": "At",
+      "line": 6,
+      "emphasis": false,
+      "src": "estimate",
+      "index": 71,
+      "start": 31.169,
+      "end": 31.486
+    },
+    {
+      "text": "two",
+      "line": 6,
+      "emphasis": false,
+      "src": "estimate",
+      "index": 72,
+      "start": 31.486,
+      "end": 31.802
+    },
+    {
+      "text": "to",
+      "line": 6,
+      "emphasis": false,
+      "src": "estimate",
+      "index": 73,
+      "start": 31.802,
+      "end": 32.119
+    },
+    {
+      "text": "one,",
+      "line": 6,
+      "emphasis": false,
+      "src": "estimate",
+      "index": 74,
+      "start": 32.119,
+      "end": 32.436
+    },
+    {
+      "text": "you",
+      "line": 6,
+      "emphasis": false,
+      "src": "estimate",
+      "index": 75,
+      "start": 32.535,
+      "end": 32.852
+    },
+    {
+      "text": "can",
+      "line": 6,
+      "emphasis": false,
+      "src": "estimate",
+      "index": 76,
+      "start": 32.852,
+      "end": 33.168
+    },
+    {
+      "text": "lose",
+      "line": 6,
+      "emphasis": false,
+      "src": "estimate",
+      "index": 77,
+      "start": 33.168,
+      "end": 33.485
+    },
+    {
+      "text": "six",
+      "line": 6,
+      "emphasis": true,
+      "src": "estimate",
+      "index": 78,
+      "start": 33.485,
+      "end": 33.802
+    },
+    {
+      "text": "trades",
+      "line": 6,
+      "emphasis": true,
+      "src": "estimate",
+      "index": 79,
+      "start": 33.802,
+      "end": 34.317
+    },
+    {
+      "text": "out",
+      "line": 6,
+      "emphasis": true,
+      "src": "estimate",
+      "index": 80,
+      "start": 34.317,
+      "end": 34.633
+    },
+    {
+      "text": "of",
+      "line": 6,
+      "emphasis": true,
+      "src": "estimate",
+      "index": 81,
+      "start": 34.633,
+      "end": 34.95
+    },
+    {
+      "text": "ten",
+      "line": 6,
+      "emphasis": true,
+      "src": "estimate",
+      "index": 82,
+      "start": 34.95,
+      "end": 35.267
+    },
+    {
+      "text": "and",
+      "line": 6,
+      "emphasis": false,
+      "src": "estimate",
+      "index": 83,
+      "start": 35.267,
+      "end": 35.584
+    },
+    {
+      "text": "still",
+      "line": 6,
+      "emphasis": false,
+      "src": "estimate",
+      "index": 84,
+      "start": 35.584,
+      "end": 35.9
+    },
+    {
+      "text": "profit.",
+      "line": 6,
+      "emphasis": true,
+      "src": "estimate",
+      "index": 85,
+      "start": 35.9,
+      "end": 36.415
+    },
+    {
+      "text": "Protect",
+      "line": 7,
+      "emphasis": true,
+      "src": "estimate",
+      "index": 86,
+      "start": 36.815,
+      "end": 37.471
+    },
+    {
+      "text": "the",
+      "line": 7,
+      "emphasis": true,
+      "src": "estimate",
+      "index": 87,
+      "start": 37.471,
+      "end": 37.875
+    },
+    {
+      "text": "downside",
+      "line": 7,
+      "emphasis": true,
+      "src": "estimate",
+      "index": 88,
+      "start": 37.875,
+      "end": 38.531
+    },
+    {
+      "text": "first.",
+      "line": 7,
+      "emphasis": false,
+      "src": "estimate",
+      "index": 89,
+      "start": 38.531,
+      "end": 38.935
+    },
+    {
+      "text": "Save",
+      "line": 7,
+      "emphasis": true,
+      "src": "estimate",
+      "index": 90,
+      "start": 39.162,
+      "end": 39.566
+    },
+    {
+      "text": "this",
+      "line": 7,
+      "emphasis": true,
+      "src": "estimate",
+      "index": 91,
+      "start": 39.566,
+      "end": 39.97
+    },
+    {
+      "text": "for",
+      "line": 7,
+      "emphasis": false,
+      "src": "estimate",
+      "index": 92,
+      "start": 39.97,
+      "end": 40.374
+    },
+    {
+      "text": "your",
+      "line": 7,
+      "emphasis": false,
+      "src": "estimate",
+      "index": 93,
+      "start": 40.374,
+      "end": 40.777
+    },
+    {
+      "text": "next",
+      "line": 7,
+      "emphasis": false,
+      "src": "estimate",
+      "index": 94,
+      "start": 40.777,
+      "end": 41.181
+    },
+    {
+      "text": "trade.",
+      "line": 7,
+      "emphasis": false,
+      "src": "estimate",
+      "index": 95,
+      "start": 41.181,
+      "end": 41.585
+    }
+  ],
+  "captions": [
+    {
+      "start": 0.4,
+      "end": 1.784,
+      "words": [
+        0,
+        1,
+        2,
+        3
+      ]
+    },
+    {
+      "start": 1.784,
+      "end": 3.168,
+      "words": [
+        4,
+        5,
+        6,
+        7
+      ]
+    },
+    {
+      "start": 3.336,
+      "end": 4.533,
+      "words": [
+        8,
+        9,
+        10,
+        11
+      ]
+    },
+    {
+      "start": 4.533,
+      "end": 5.319,
+      "words": [
+        12,
+        13
+      ]
+    },
+    {
+      "start": 5.669,
+      "end": 7.202,
+      "words": [
+        14,
+        15,
+        16,
+        17
+      ]
+    },
+    {
+      "start": 7.202,
+      "end": 9.069,
+      "words": [
+        18,
+        19,
+        20,
+        21
+      ]
+    },
+    {
+      "start": 9.069,
+      "end": 9.78,
+      "words": [
+        22,
+        23
+      ]
+    },
+    {
+      "start": 9.979,
+      "end": 10.335,
+      "words": [
+        24
+      ]
+    },
+    {
+      "start": 10.635,
+      "end": 12.123,
+      "words": [
+        25,
+        26,
+        27,
+        28
+      ]
+    },
+    {
+      "start": 12.123,
+      "end": 12.445,
+      "words": [
+        29
+      ]
+    },
+    {
+      "start": 12.626,
+      "end": 14.316,
+      "words": [
+        30,
+        31,
+        32,
+        33
+      ]
+    },
+    {
+      "start": 14.316,
+      "end": 14.839,
+      "words": [
+        34
+      ]
+    },
+    {
+      "start": 15.02,
+      "end": 16.508,
+      "words": [
+        35,
+        36,
+        37,
+        38
+      ]
+    },
+    {
+      "start": 16.689,
+      "end": 17.856,
+      "words": [
+        39,
+        40,
+        41
+      ]
+    },
+    {
+      "start": 18.206,
+      "end": 19.605,
+      "words": [
+        42,
+        43,
+        44,
+        45
+      ]
+    },
+    {
+      "start": 19.605,
+      "end": 21.309,
+      "words": [
+        46,
+        47,
+        48,
+        49
+      ]
+    },
+    {
+      "start": 21.491,
+      "end": 22.992,
+      "words": [
+        50,
+        51,
+        52,
+        53
+      ]
+    },
+    {
+      "start": 23.292,
+      "end": 24.905,
+      "words": [
+        54,
+        55,
+        56,
+        57
+      ]
+    },
+    {
+      "start": 24.905,
+      "end": 26.415,
+      "words": [
+        58,
+        59,
+        60,
+        61
+      ]
+    },
+    {
+      "start": 26.415,
+      "end": 27.722,
+      "words": [
+        62,
+        63,
+        64,
+        65
+      ]
+    },
+    {
+      "start": 28.222,
+      "end": 30.399,
+      "words": [
+        66,
+        67,
+        68,
+        69
+      ]
+    },
+    {
+      "start": 30.399,
+      "end": 30.769,
+      "words": [
+        70
+      ]
+    },
+    {
+      "start": 31.169,
+      "end": 32.436,
+      "words": [
+        71,
+        72,
+        73,
+        74
+      ]
+    },
+    {
+      "start": 32.535,
+      "end": 33.802,
+      "words": [
+        75,
+        76,
+        77,
+        78
+      ]
+    },
+    {
+      "start": 33.802,
+      "end": 35.267,
+      "words": [
+        79,
+        80,
+        81,
+        82
+      ]
+    },
+    {
+      "start": 35.267,
+      "end": 36.415,
+      "words": [
+        83,
+        84,
+        85
+      ]
+    },
+    {
+      "start": 36.815,
+      "end": 38.935,
+      "words": [
+        86,
+        87,
+        88,
+        89
+      ]
+    },
+    {
+      "start": 39.162,
+      "end": 40.777,
+      "words": [
+        90,
+        91,
+        92,
+        93
+      ]
+    },
+    {
+      "start": 40.777,
+      "end": 41.585,
+      "words": [
+        94,
+        95
+      ]
+    }
+  ]
+}

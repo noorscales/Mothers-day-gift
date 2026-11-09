@@ -11,17 +11,35 @@ CONTENT = ROOT / "content"
 BUILD = ROOT / "build"
 REMOTION = ROOT / "remotion"
 
-# Artefacts handed from one stage to the next.
-SCRIPT_JSON = BUILD / "script.json"          # stage 1 -> 2
-VOICE_DIR = BUILD / "voice"                  # stage 2 per-line clips
-NARRATION_WAV = BUILD / "narration.wav"      # stage 2 -> 4, 5
-VOICE_MANIFEST = BUILD / "voice.json"        # stage 2 -> 4 (line spans)
-TIMELINE_JSON = BUILD / "timeline.json"      # stage 4 -> 3, 5
-CAPTIONS_SRT = BUILD / "captions.srt"        # stage 4 -> 5
-VIDEO_SILENT = BUILD / "video_silent.mp4"    # stage 3 -> 5
-MUSIC_WAV = BUILD / "music.wav"              # stage 5
-FINAL_MP4 = BUILD / "mothers-day-short.mp4"  # stage 5 output
-THUMB_PNG = BUILD / "thumbnail.png"          # stage 5 output
+
+class _Paths:
+    """Per-project artefact paths. `use_project()` points them at build/<project>/."""
+
+    def use(self, project: str) -> None:
+        self.PROJECT = project
+        self.CONTENT = CONTENT / project
+        self.BUILD = BUILD / project
+        self.SCRIPT_JSON = self.BUILD / "script.json"          # stage 1 -> 2
+        self.VOICE_DIR = self.BUILD / "voice"                  # stage 2 per-line clips
+        self.NARRATION_WAV = self.BUILD / "narration.wav"      # stage 2 -> 4, 5
+        self.VOICE_MANIFEST = self.BUILD / "voice.json"        # stage 2 -> 4 (line spans)
+        self.TIMELINE_JSON = self.BUILD / "timeline.json"      # stage 4 -> 3, 5
+        self.CAPTIONS_SRT = self.BUILD / "captions.srt"        # stage 4 -> 5
+        self.VIDEO_SILENT = self.BUILD / "video_silent.mp4"    # stage 3 -> 5
+        self.MUSIC_WAV = self.BUILD / "music.wav"              # stage 5
+        self.FINAL_MP4 = self.BUILD / f"{project}-reel.mp4"    # stage 5 output
+        self.THUMB_PNG = self.BUILD / "thumbnail.png"          # stage 5 output
+
+
+P = _Paths()
+
+
+def use_project(name: str) -> dict:
+    from .projects import PROJECTS
+
+    P.use(name)
+    return PROJECTS[name]
+
 
 FPS = 30
 WIDTH, HEIGHT = 1080, 1920

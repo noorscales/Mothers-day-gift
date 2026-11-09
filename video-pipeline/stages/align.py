@@ -16,8 +16,7 @@ import os
 import re
 from difflib import SequenceMatcher
 
-from .common import (CAPTIONS_SRT, FPS, NARRATION_WAV, SCRIPT_JSON, TIMELINE_JSON,
-                     VOICE_MANIFEST, log, read_json, write_json)
+from .common import FPS, P, log, read_json, write_json
 
 WHISPER_MODEL = os.environ.get("WHISPER_MODEL", "base.en")
 
@@ -31,7 +30,7 @@ def transcribe_faster_whisper() -> list[dict]:
     from faster_whisper import WhisperModel
 
     model = WhisperModel(WHISPER_MODEL, device="auto", compute_type="int8")
-    segments, _ = model.transcribe(str(NARRATION_WAV), word_timestamps=True,
+    segments, _ = model.transcribe(str(P.NARRATION_WAV), word_timestamps=True,
                                    vad_filter=False, language="en")
     return [{"word": w.word.strip(), "start": w.start, "end": w.end}
             for seg in segments for w in (seg.words or [])]
@@ -41,7 +40,7 @@ def transcribe_openai_whisper() -> list[dict]:
     import whisper
 
     model = whisper.load_model(WHISPER_MODEL)
-    result = model.transcribe(str(NARRATION_WAV), word_timestamps=True, language="en")
+    result = model.transcribe(str(P.NARRATION_WAV), word_timestamps=True, language="en")
     return [{"word": w["word"].strip(), "start": w["start"], "end": w["end"]}
             for seg in result["segments"] for w in seg.get("words", [])]
 
@@ -152,12 +151,12 @@ def write_srt(chunks: list[list[dict]]) -> None:
     for n, chunk in enumerate(chunks, start=1):
         text = " ".join(w["text"] for w in chunk)
         blocks.append(f"{n}\n{srt_time(chunk[0]['start'])} --> {srt_time(chunk[-1]['end'])}\n{text}\n")
-    CAPTIONS_SRT.write_text("\n".join(blocks))
+    P.CAPTIONS_SRT.write_text("\n".join(blocks))
 
 
 def run_stage(tail: float = 0.6) -> None:
-    script = read_json(SCRIPT_JSON)
-    voice = read_json(VOICE_MANIFEST)
+    script = read_json(P.SCRIPT_JSON)
+    voice = read_json(P.VOICE_MANIFEST)
     spans = {s["id"]: s for s in voice["lines"]}
 
     # Script words with an estimated time inside the line's known span.
@@ -197,11 +196,12 @@ def run_stage(tail: float = 0.6) -> None:
 
     chunks = caption_chunks(words)
     write_srt(chunks)
-    write_json(TIMELINE_JSON, {
+    write_json(P.TIMELINE_JSON, {
         "fps": FPS,
         "duration": duration,
         "durationInFrames": int(round(duration * FPS)),
         "title": script.get("title", ""),
+        "project": P.PROJECT,
         "alignment": backend,
         "scenes": scenes,
         "words": words,

@@ -17,8 +17,7 @@ import os
 import urllib.request
 from pathlib import Path
 
-from .common import (NARRATION_WAV, SCRIPT_JSON, VOICE_DIR, VOICE_MANIFEST, log,
-                     probe_duration, read_json, require, run, write_json)
+from .common import P, log, probe_duration, read_json, require, run, write_json
 
 SAMPLE_RATE = 48000
 
@@ -30,6 +29,9 @@ AUDIO_PROMPTS = {
     "playful": "Playful and teasing, a hint of laughter, lightly emphasising the punchline.",
     "hushed": "Quiet and slower, almost a whisper, as if about to reveal something important. Leave space between words.",
     "tender": "Tender and sincere, slightly emotional, soft and close to the microphone, slowing on the final words.",
+    "confident": "Calm authority, like a mentor who has seen it all. Even pace, crisp consonants, a slight downward inflection at the end of each sentence.",
+    "urgent": "Direct and punchy, slightly faster, as if stopping a friend from making a costly mistake. No shouting.",
+    "calm": "Relaxed and reassuring, a little slower, warm closing tone, like the last line of a good piece of advice.",
     "emphatic": "Clear and heartfelt, with confident emphasis on key words.",
 }
 
@@ -40,6 +42,9 @@ ELEVEN_SETTINGS = {
     "playful": {"stability": 0.30, "similarity_boost": 0.8, "style": 0.70},
     "hushed": {"stability": 0.70, "similarity_boost": 0.8, "style": 0.20},
     "tender": {"stability": 0.55, "similarity_boost": 0.85, "style": 0.50},
+    "confident": {"stability": 0.60, "similarity_boost": 0.8, "style": 0.30},
+    "urgent": {"stability": 0.35, "similarity_boost": 0.8, "style": 0.60},
+    "calm": {"stability": 0.70, "similarity_boost": 0.8, "style": 0.25},
     "emphatic": {"stability": 0.40, "similarity_boost": 0.8, "style": 0.55},
 }
 
@@ -50,6 +55,9 @@ ESPEAK_PROSODY = {
     "playful": {"s": 160, "p": 58, "a": 115},
     "hushed": {"s": 128, "p": 40, "a": 80},
     "tender": {"s": 135, "p": 45, "a": 100},
+    "confident": {"s": 155, "p": 42, "a": 115},
+    "urgent": {"s": 172, "p": 50, "a": 125},
+    "calm": {"s": 138, "p": 38, "a": 105},
     "emphatic": {"s": 150, "p": 52, "a": 130},
 }
 
@@ -60,13 +68,17 @@ def _post(url: str, headers: dict, body: dict, out: Path) -> None:
         out.write_bytes(resp.read())
 
 
+# Per-project default voices (projects.py); env vars still override.
+PROJECT_VOICE: dict[str, str] = {}
+
+
 def synth_openai(text: str, emotion: str, out: Path) -> None:
     _post(
         "https://api.openai.com/v1/audio/speech",
         {"Authorization": f"Bearer {os.environ['OPENAI_API_KEY']}", "Content-Type": "application/json"},
         {
             "model": os.environ.get("OPENAI_TTS_MODEL", "gpt-4o-mini-tts"),
-            "voice": os.environ.get("OPENAI_TTS_VOICE", "coral"),
+            "voice": os.environ.get("OPENAI_TTS_VOICE", PROJECT_VOICE.get("openai", "coral")),
             "input": text,
             "instructions": AUDIO_PROMPTS[emotion],
             "response_format": "wav",
@@ -76,7 +88,7 @@ def synth_openai(text: str, emotion: str, out: Path) -> None:
 
 
 def synth_elevenlabs(text: str, emotion: str, out: Path) -> None:
-    voice_id = os.environ.get("ELEVENLABS_VOICE_ID", "21m00Tcm4TlvDq8ikWAM")
+    voice_id = os.environ.get("ELEVENLABS_VOICE_ID", PROJECT_VOICE.get("elevenlabs", "21m00Tcm4TlvDq8ikWAM"))
     _post(
         f"https://api.elevenlabs.io/v1/text-to-speech/{voice_id}?output_format=mp3_44100_128",
         {"xi-api-key": os.environ["ELEVENLABS_API_KEY"], "Content-Type": "application/json"},
@@ -92,7 +104,7 @@ def synth_elevenlabs(text: str, emotion: str, out: Path) -> None:
 def synth_espeak(text: str, emotion: str, out: Path) -> None:
     require("espeak-ng")
     p = ESPEAK_PROSODY[emotion]
-    voice = os.environ.get("ESPEAK_VOICE", "en-gb+f4")
+    voice = os.environ.get("ESPEAK_VOICE", PROJECT_VOICE.get("espeak", "en-gb+f4"))
     run(["espeak-ng", "-v", voice, "-s", str(p["s"]), "-p", str(p["p"]),
          "-a", str(p["a"]), "-g", "2", "-w", str(out), text])
 
@@ -126,19 +138,21 @@ def normalise_clip(raw: Path, out: Path) -> None:
          "-ac", "1", "-ar", str(SAMPLE_RATE), str(out)])
 
 
-def run_stage(provider: str | None = None, lead_in: float = 0.4) -> None:
+def run_stage(project: dict, provider: str | None = None, lead_in: float = 0.4) -> None:
+    PROJECT_VOICE.clear()
+    PROJECT_VOICE.update(project.get("voice", {}))
     require("ffmpeg")
-    script = read_json(SCRIPT_JSON)
+    script = read_json(P.SCRIPT_JSON)
     provider = pick_provider(provider)
     synth = PROVIDERS[provider]
     log("voice", f"provider={provider}, {len(script['lines'])} lines")
-    VOICE_DIR.mkdir(parents=True, exist_ok=True)
+    P.VOICE_DIR.mkdir(parents=True, exist_ok=True)
 
     concat_list, spans, cursor = [], [], 0.0
 
     def silence(seconds: float, name: str) -> None:
         nonlocal cursor
-        path = VOICE_DIR / f"{name}.wav"
+        path = P.VOICE_DIR / f"{name}.wav"
         run(["ffmpeg", "-y", "-v", "error", "-f", "lavfi", "-i",
              f"anullsrc=r={SAMPLE_RATE}:cl=mono", "-t", f"{seconds:.3f}", str(path)])
         concat_list.append(path)
@@ -147,8 +161,8 @@ def run_stage(provider: str | None = None, lead_in: float = 0.4) -> None:
     silence(lead_in, "000_lead_in")
     for i, line in enumerate(script["lines"], start=1):
         ext = "mp3" if provider == "elevenlabs" else "wav"
-        raw = VOICE_DIR / f"{i:03d}_{line['id']}.raw.{ext}"
-        clip = VOICE_DIR / f"{i:03d}_{line['id']}.wav"
+        raw = P.VOICE_DIR / f"{i:03d}_{line['id']}.raw.{ext}"
+        clip = P.VOICE_DIR / f"{i:03d}_{line['id']}.wav"
         synth(line["text"], line["emotion"], raw)
         normalise_clip(raw, clip)
         dur = probe_duration(clip)
@@ -158,11 +172,11 @@ def run_stage(provider: str | None = None, lead_in: float = 0.4) -> None:
         log("voice", f"  {line['id']:<10} {line['emotion']:<8} {dur:5.2f}s")
         silence(float(line.get("pause_after", 0.3)), f"{i:03d}_pause")
 
-    list_file = VOICE_DIR / "concat.txt"
+    list_file = P.VOICE_DIR / "concat.txt"
     list_file.write_text("".join(f"file '{p.resolve()}'\n" for p in concat_list))
     run(["ffmpeg", "-y", "-v", "error", "-f", "concat", "-safe", "0", "-i", str(list_file),
-         "-c:a", "pcm_s16le", str(NARRATION_WAV)])
+         "-c:a", "pcm_s16le", str(P.NARRATION_WAV)])
 
-    total = probe_duration(NARRATION_WAV)
-    write_json(VOICE_MANIFEST, {"provider": provider, "duration": round(total, 3), "lines": spans})
+    total = probe_duration(P.NARRATION_WAV)
+    write_json(P.VOICE_MANIFEST, {"provider": provider, "duration": round(total, 3), "lines": spans})
     log("voice", f"narration.wav {total:.2f}s")

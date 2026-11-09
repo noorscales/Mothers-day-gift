@@ -1,0 +1,104 @@
+{
+  "title": "Risk First: 3 rules that keep traders alive",
+  "strategy": {
+    "hook": "Counter-intuitive claim in the first line: entries are not the problem, sizing is. The crash visual hits on frame one.",
+    "pacing": "Three numbered rules, each with one picture and one number. Fast build, then a hushed beat, then the maths payoff.",
+    "retention": "'Here's the part nobody posts' at ~60% re-opens curiosity right before the most surprising number (lose 60% and still profit).",
+    "loop": "The close returns to the hook's idea (downside first) and asks for a save, so a replay starts on the crash again."
+  },
+  "lines": [
+    {
+      "id": "hook",
+      "beat": "hook",
+      "text": "Most traders don't blow up from bad entries. They blow up from bad sizing.",
+      "emotion": "urgent",
+      "visual": "crash",
+      "emphasis": [
+        "blow up",
+        "bad sizing"
+      ],
+      "pause_after": 0.35
+    },
+    {
+      "id": "rule1",
+      "beat": "build",
+      "text": "Rule one: risk one percent of your account per trade. Max.",
+      "emotion": "confident",
+      "visual": "risk",
+      "emphasis": [
+        "one percent"
+      ],
+      "pause_after": 0.3
+    },
+    {
+      "id": "drawdown",
+      "beat": "build",
+      "text": "Ten losses in a row? You still have ninety percent. At ten percent risk? About a third.",
+      "emotion": "emphatic",
+      "visual": "drawdown",
+      "emphasis": [
+        "ninety percent",
+        "a third"
+      ],
+      "pause_after": 0.35
+    },
+    {
+      "id": "rule2",
+      "beat": "build",
+      "text": "Rule two: set your stop before you enter. Not after it hurts.",
+      "emotion": "confident",
+      "visual": "stoploss",
+      "emphasis": [
+        "stop",
+        "before"
+      ],
+      "pause_after": 0.3
+    },
+    {
+      "id": "rule3",
+      "beat": "build",
+      "text": "Rule three: only take trades that pay at least twice the risk.",
+      "emotion": "confident",
+      "visual": "rr",
+      "emphasis": [
+        "twice the risk"
+      ],
+      "pause_after": 0.5
+    },
+    {
+      "id": "interrupt",
+      "beat": "pattern_interrupt",
+      "text": "Here's the part nobody posts.",
+      "emotion": "hushed",
+      "visual": "winrate",
+      "emphasis": [
+        "nobody posts"
+      ],
+      "pause_after": 0.4
+    },
+    {
+      "id": "payoff",
+      "beat": "payoff",
+      "text": "At two to one, you can lose six trades out of ten and still profit.",
+      "emotion": "emphatic",
+      "visual": "winrate",
+      "emphasis": [
+        "six trades out of ten",
+        "profit"
+      ],
+      "pause_after": 0.4
+    },
+    {
+      "id": "close",
+      "beat": "loop",
+      "text": "Protect the downside first. Save this for your next trade.",
+      "emotion": "calm",
+      "visual": "title",
+      "emphasis": [
+        "Protect the downside",
+        "Save this"
+      ],
+      "pause_after": 0.8
+    }
+  ]
+}

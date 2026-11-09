@@ -10,7 +10,7 @@ from __future__ import annotations
 import os
 import shutil
 
-from .common import REMOTION, TIMELINE_JSON, VIDEO_SILENT, log, require, run
+from .common import P, REMOTION, log, require, run
 
 
 def browser_executable() -> str | None:
@@ -21,19 +21,19 @@ def browser_executable() -> str | None:
     return None  # Remotion downloads its own headless shell
 
 
-def run_stage(concurrency: str | None = None) -> None:
+def run_stage(project: dict, concurrency: str | None = None) -> None:
     require("npx")
     if not (REMOTION / "node_modules").exists():
         log("render", "installing Remotion dependencies (npm ci)")
         run(["npm", "ci", "--no-audit", "--no-fund"], cwd=REMOTION)
 
-    cmd = ["npx", "remotion", "render", "src/index.ts", "MothersDay", str(VIDEO_SILENT),
-           f"--props={TIMELINE_JSON}", "--codec=h264", "--crf=18", "--muted",
+    cmd = ["npx", "remotion", "render", "src/index.ts", project["composition"], str(P.VIDEO_SILENT),
+           f"--props={P.TIMELINE_JSON}", "--codec=h264", "--crf=18", "--muted",
            "--log=warn"]
     if browser := browser_executable():
         cmd.append(f"--browser-executable={browser}")
     if concurrency or os.environ.get("REMOTION_CONCURRENCY"):
         cmd.append(f"--concurrency={concurrency or os.environ['REMOTION_CONCURRENCY']}")
-    log("render", "rendering frames with Remotion …")
+    log("render", f"rendering {project['composition']} with Remotion …")
     run(cmd, cwd=REMOTION, quiet=False)
-    log("render", f"wrote {VIDEO_SILENT.name}")
+    log("render", f"wrote {P.VIDEO_SILENT.name}")

@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Mother's Day short-form video pipeline.
+"""Short-form reel pipeline (projects: mothers-day, trading).
 
     script -> voice -> align -> render -> master
 
@@ -10,7 +10,8 @@
   5 master  FFmpeg music bed, ducking, loudnorm, mux, thumb  (stages/master.py)
 
 Examples:
-  python pipeline.py                       # everything, auto-picks providers
+  python pipeline.py --project trading     # build the trading reel
+  python pipeline.py                       # mothers-day reel, auto-picks providers
   python pipeline.py --offline             # no network: default script + espeak
   python pipeline.py --from render         # re-render after editing the animation
   python pipeline.py --only voice --tts openai
@@ -22,13 +23,16 @@ import sys
 import time
 
 from stages import align, master, render, script, voice
-from stages.common import FINAL_MP4, log
+from stages.common import P, log, use_project
+from stages.projects import PROJECTS
 
 ORDER = ["script", "voice", "align", "render", "master"]
 
 
 def main() -> int:
     ap = argparse.ArgumentParser(description=__doc__, formatter_class=argparse.RawDescriptionHelpFormatter)
+    ap.add_argument("--project", choices=sorted(PROJECTS), default="mothers-day",
+                    help="which reel to build (content/<project>/, build/<project>/)")
     ap.add_argument("--only", choices=ORDER, help="run a single stage")
     ap.add_argument("--from", dest="start", choices=ORDER, help="start at this stage")
     ap.add_argument("--offline", action="store_true", help="use the bundled script and espeak-ng")
@@ -38,13 +42,14 @@ def main() -> int:
     ap.add_argument("--concurrency", help="Remotion render concurrency")
     args = ap.parse_args()
 
+    project = use_project(args.project)
     stages = [args.only] if args.only else ORDER[ORDER.index(args.start or "script"):]
     actions = {
-        "script": lambda: script.run(offline=args.offline, seconds=args.seconds),
-        "voice": lambda: voice.run_stage("espeak" if args.offline and not args.tts else args.tts),
+        "script": lambda: script.run(project, offline=args.offline, seconds=args.seconds),
+        "voice": lambda: voice.run_stage(project, "espeak" if args.offline and not args.tts else args.tts),
         "align": align.run_stage,
-        "render": lambda: render.run_stage(args.concurrency),
-        "master": lambda: master.run_stage(args.music),
+        "render": lambda: render.run_stage(project, args.concurrency),
+        "master": lambda: master.run_stage(project, args.music),
     }
     t0 = time.time()
     for name in stages:
@@ -52,7 +57,7 @@ def main() -> int:
         actions[name]()
         log(name, f"done in {time.time() - t:.1f}s")
     if "master" in stages:
-        log("pipeline", f"finished in {time.time() - t0:.1f}s -> {FINAL_MP4}")
+        log("pipeline", f"finished in {time.time() - t0:.1f}s -> {P.FINAL_MP4}")
     return 0
 
 

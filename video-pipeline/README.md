@@ -1,7 +1,17 @@
-# Mother's Day short — AI video pipeline
+# AI reel pipeline
 
-Turns the gift page in this repo into a 9:16 voiced short with animated, word-synced
-captions. Five stages, each a small module, connected by JSON/WAV files in `build/`:
+Builds 9:16 voiced reels with animated, word-synced captions. There are two projects:
+
+| `--project` | Reel | Remotion composition |
+|---|---|---|
+| `mothers-day` (default) | The gift page in this repo, as a short for Mum | `MothersDay` |
+| `trading` | "Risk First": three risk-management rules, with animated charts | `TradingReel` |
+
+Each project has its own `content/<project>/brief.md` and `script.default.json`, and
+its own settings in `stages/projects.py`: composition, allowed visuals, script rules,
+voice and music. Output goes to `build/<project>/`.
+
+Five stages, each a small module, connected by JSON/WAV files:
 
 ```
 content/brief.md ──► 1 SCRIPT ──► script.json
@@ -32,6 +42,7 @@ pip install -r requirements.txt          # optional extras; offline mode needs n
 sudo apt-get install -y ffmpeg espeak-ng # espeak-ng only for the offline voice
 
 python pipeline.py --offline             # no API keys: bundled script + espeak voice
+python pipeline.py --project trading --offline   # the trading reel
 python pipeline.py                       # full run, providers picked from env vars
 python pipeline.py --from render         # iterate on the animation only
 (cd remotion && npm run studio)          # live preview in Remotion Studio
@@ -104,14 +115,37 @@ python pipeline.py --from render         # iterate on the animation only
   `mov_text` subtitle track and `+faststart`.
 - **Outputs:** a thumbnail taken from the emotional payoff, and an ffprobe report.
 
+## The trading reel
+
+The script makes three rules concrete. Every number on screen is checked arithmetic:
+- **Hook:** 25% position size wipes out half the account.
+- **Rule 1:** 1% of $10,000 is $100 at risk.
+- **Drawdown:** after 10 straight losses, 1% risk keeps 0.99¹⁰ = 90.4% of the account;
+  10% risk keeps 0.9¹⁰ = 34.9%.
+- **Rule 2:** the stop is drawn before price moves. Price hits it, and you're out at −1%.
+- **Rule 3:** a 2:1 reward-to-risk box.
+- **Payoff:** 10 trades flip over: 4 wins × 2R − 6 losses × 1R = +2R.
+- **Close:** a checklist and a "Save this" call to action, looping back to the hook.
+
+The look is a dark terminal style with green and red candles. The music is a minor-key
+pad with a soft 100 bpm pulse. "Not financial advice · Educational only" stays on
+screen for the whole reel, and the scriptwriting rules forbid tickers, predictions and
+income claims.
+
+## Adding a project
+
+1. Create `content/<name>/brief.md` and `script.default.json`.
+2. Add an entry to `stages/projects.py`.
+3. Add a composition in `remotion/src/Root.tsx` with a visual for each name in `visuals`.
+
 ## Files
 
 ```
 pipeline.py               orchestrator (--only / --from / --offline / --tts / --music)
-content/brief.md          creative brief distilled from ../index.html
-content/script.default.json
+content/<project>/        brief.md + script.default.json per reel
+stages/projects.py        per-project settings
 stages/{script,voice,align,render,master}.py
-remotion/src/             Root.tsx, MothersDay.tsx, Captions.tsx, Background.tsx,
-                          Petals.tsx, visuals/{Gifts,Moments,shared}.tsx
+remotion/src/             Root.tsx, Captions.tsx (themeable), MothersDay.tsx + visuals/,
+                          trading/{TradingReel,visuals,chart,theme}.tsx
 build/                    generated artefacts (git-ignored)
 ```

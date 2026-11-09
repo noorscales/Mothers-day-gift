@@ -1,6 +1,6 @@
 # Creative brief — Mother's Day short
 
-Source material: `../index.html` and `../mothers-day.pdf` (the interactive gift page).
+Source material: `../../index.html` and `../../mothers-day.pdf` (the interactive gift page).
 
 **Audience:** one person — Mum. Secondary: friends/family if she shares it.
 **Format:** 9:16 vertical, 30–45 s, voice-over + kinetic captions.
